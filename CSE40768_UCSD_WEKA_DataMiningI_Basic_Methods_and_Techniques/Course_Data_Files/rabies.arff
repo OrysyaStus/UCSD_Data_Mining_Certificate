@@ -1,0 +1,36 @@
+% Stus, Orysya. (2016). Taken from "Animal and human data related to rabies in Nepal."
+% (doi:10.1371/journal.pntd.0004461.s004)
+% Data set describes the amount of animal bites and rabies outbreak. Models the epidemics of rabies within selected districts in Nepal.
+
+% The class attribute is Nepal_region. Data set will show the regions in Nepal which have the highest rates of rabies and dog bites.
+
+
+@relation rabies
+
+@attribute animal_outbreaks_2012 numeric
+@attribute animal_outbreaks_2013 numeric
+@attribute dog_bites_2012 numeric
+@attribute dog_bites_2013 numeric
+@attribute Nepal_region {Far-Western, Western, Mid-Western, Central, Eastern, }
+ 
+@data 
+0,1,414,534,Far-Western
+2,7,388,131,Western
+0,0,309,316,Western
+0,0,386,176,Far-Western
+0,7,355,311,Far-Western
+1,0,196,219,Far-Western
+0,1,66,56,Mid-Western
+1,0,1387,2205,Central
+0,0,493,440,Mid-Western
+0,0,516,477,Central
+0,0,485,345,Eastern
+0,0,282,391,Central
+0,0,259,361,Far-Western
+0,6,246,291,Mid-Western
+0,0,908,1223,Mid-Western
+0,0,88,111,Far-Western
+0,0,1005,1519,Central
+0,0,318,242,Eastern
+0,2,213,284,Central
+0,0,386,433,Central

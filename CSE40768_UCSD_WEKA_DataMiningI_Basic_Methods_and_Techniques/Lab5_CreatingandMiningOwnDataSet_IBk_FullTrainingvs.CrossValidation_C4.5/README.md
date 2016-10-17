@@ -1,0 +1,2 @@
+# CSE40768_UCSD_WEKA_DataMiningI_Basic_Methods_and_Techniques
+Large databases of information create great opportunities for the application of data mining methods. This course provides students with a foundation in basic data mining, data analysis, and pattern recognition concepts and algorithms. It will begin with an overview of the data mining process and approaches. Practical exercises include various data analysis and machine learning techniques for model and knowledge creation through a process of inference, model fitting, or learning from examples.

@@ -1,0 +1,158 @@
+%Date: Tue, 15 Nov 88 15:44:08 EST
+%From: stan <stan@csi2.UofO.EDU>
+%Message-Id: <8811152044.AA23067@csih.UofO.EDU>
+%To: aha@ICS.UCI.EDU
+%
+%1. Title: Final settlements in labor negotitions in Canadian industry
+%
+%2. Source Information
+%   -- Creators: Collective Barganing Review, montly publication,
+%      Labour Canada, Industrial Relations Information Service,
+%	Ottawa, Ontario, K1A 0J2, Canada, (819) 997-3117
+%	The data includes all collective agreements reached
+%        in the business and personal services sector for locals
+%        with at least 500 members (teachers, nurses, university
+%        staff, police, etc) in Canada in 87 and first quarter of 88.   
+%   -- Donor: Stan Matwin, Computer Science Dept, University of Ottawa,
+%                34 Somerset East, K1N 9B4, (stan@uotcsi2.bitnet)
+%   -- Date: November 1988
+% 
+%3. Past Usage:
+%   -- testing concept learning software, in particular
+%      an experimental method to learn two-tiered concept descriptions.
+%      The data was used to learn the description of an acceptable
+%      and unacceptable contract.
+%      The unacceptable contracts were either obtained by interviewing
+%      experts, or by inventing near misses.
+%      Examples of use are described in:
+%	Bergadano, F., Matwin, S., Michalski, R.,
+%	Zhang, J., Measuring Quality of Concept Descriptions, 
+%	Procs. of the 3rd European Working Sessions on Learning,
+%	Glasgow, October 1988.
+%	Bergadano, F., Matwin, S., Michalski, R., Zhang, J.,
+%        Representing and Acquiring Imprecise and Context-dependent
+%	Concepts in Knowledge-based Systems, Procs. of ISMIS'88,
+%	North Holland, 1988.
+%4. Relevant Information:
+%   -- data was used to test 2tier approach with learning
+%from positive and negative examples
+%
+%5. Number of Instances: 57 
+%
+%6. Number of Attributes: 16 
+%
+%7. Attribute Information:
+%   1.  dur: duration of agreement 
+%       [1..7]
+%   2   wage1.wage : wage increase in first year of contract 
+%       [2.0 .. 7.0]
+%   3   wage2.wage : wage increase in second year of contract
+%       [2.0 .. 7.0]
+%   4   wage3.wage : wage increase in third year of contract
+%       [2.0 .. 7.0]
+%   5   cola : cost of living allowance 
+%       [none, tcf, tc]
+%   6   hours.hrs : number of working hours during week
+%       [35 .. 40]
+%   7   pension : employer contributions to pension plan
+%       [none, ret_allw, empl_contr]
+%   8   stby_pay : standby pay
+%       [2 .. 25]
+%   9   shift_diff : shift differencial : supplement for work on II and III shift
+%       [1 .. 25]
+%  10   educ_allw.boolean : education allowance 
+%       [yes no]
+%  11   holidays : number of statutory holidays 
+%       [9 .. 15]
+%  12   vacation : number of paid vacation days
+%       [ba, avg, gnr]
+%  13   lngtrm_disabil.boolean : 
+%       employer's help during employee longterm disabil
+%       ity [yes , no]
+%  14   dntl_ins : employers contribution towards the dental plan
+%       [none, half, full]
+%  15   bereavement.boolean : employer's financial contribution towards the 
+%       covering the costs of bereavement
+%       [yes , no]
+%  16   empl_hplan : employer's contribution towards the health plan
+%       [none, half, full]
+%
+%8. Missing Attribute Values: None
+%
+%9. Class Distribution:
+%
+%10. Exceptions from format instructions: no commas between attribute values.
+%
+%---------------------------------------------------------------------------
+
+
+@relation labor-neg-nominal
+
+%  Classes
+%  -------
+
+% good, bad.
+
+%  Attributes
+%  ----------
+
+@attribute duration { 1, 2, 3 ,unknown }
+@attribute "wage increase first year" { low, medium, high ,unknown }
+@attribute "wage increase second year" { low, medium, high ,unknown }
+@attribute "wage increase third year" { low, medium, high ,unknown }
+@attribute "cost of living adjustment"{ none, tcf, tc ,unknown }
+@attribute "working hours" { sub35, sub40, equal40 ,unknown } 
+@attribute pension { none, ret_allw, empl_contr ,unknown }
+@attribute "standby pay" { 2, 4, 8, 12, 13 ,unknown }
+@attribute "shift differential"	{ 0, 1, 2, 3, 4, 5,6, 10, 11, 25 ,unknown } 
+@attribute "education allowance" {yes, no ,unknown }
+@attribute "statutory holidays"	{ 9, 10, 11, 12,13,15  ,unknown }
+@attribute vacation { "below average", average, generous ,unknown }
+@attribute "longterm disability assistance" { yes, no ,unknown }
+@attribute "contribution to dental plan" { none, half, full ,unknown }
+@attribute "bereavement assistance" { yes, no ,unknown }
+@attribute "contribution to health plan" { none, half, full ,unknown }
+@attribute class { good, bad } 
+
+@data
+
+1,medium,unknown,unknown,unknown,equal40,unknown,unknown,2,unknown,11,average,unknown,unknown,yes,unknown,good
+2,medium,medium,unknown,unknown,sub40,ret_allw,unknown,unknown,yes,11,"below average",unknown,full,unknown,full,good
+unknown,unknown,unknown,unknown,unknown,sub40,empl_contr,unknown,5,unknown,11,generous,yes,half,yes,half,good
+3,medium,medium,medium,tc,unknown,unknown,unknown,unknown,yes,unknown,unknown,unknown,unknown,yes,unknown,good
+3,medium,,medium,medium,unknown, equal40,unknown,unknown,unknown,unknown,12,average,unknown,half,yes,half,good
+2,low,low,unknown,unknown,sub35,unknown,unknown,6,yes,12,average,unknown,unknown,unknown,unknown,good
+3,medium,medium,medium,tc,unknown,empl_contr,unknown,unknown,unknown,12,generous,yes,none,yes,half,good
+3,high,medium,low,unknown,equal40,unknown,unknown,3,unknown,12,"below average",unknown,unknown,unknown,unknown,good
+2,low,high,unknown,unknown,sub40,unknown,12,25,yes,11,"below average",yes,half,yes,unknown,good
+1,medium,unknown,unknown,none,equal40,empl_contr,unknown,4,unknown,11,generous,yes,full,unknown,unknown,good
+3,medium,medium,medium,none,sub40,unknown,unknown,3,unknown,13,generous,unknown,unknown,yes,full,good
+2,high,high,unknown,unknown,sub40,unknown,unknown,4,unknown,15,unknown,unknown,full,unknown,unknown,good
+2,medium,medium,unknown,none,equal40,unknown,unknown,2,no,10,"below average",no,half,unknown,half,bad
+3,medium,medium,medium,tcf,sub40,unknown,unknown,4,unknown,13,generous,unknown,full,yes,full,good
+1,low,unknown,unknown,none,sub40,unknown,unknown,10,no,11,generous,unknown,unknown,unknown,unknown,good
+2,medium,medium,unknown,none,sub40,empl_contr,unknown,unknown,unknown,11,average,unknown,full,yes,unknown,good
+1,low,unknown,unknown,unknown,sub35,unknown,unknown,2,unknown,12,"below average",unknown,unknown,unknown,unknown,good
+1,low,unknown,unknown,tc,equal40,ret_allw,2,3,no,9,"below average",yes,half,unknown,none,bad
+1,low,unknown,unknown,none,sub40,none,unknown,unknown,yes,11,average,no,none,no,none,bad
+2,medium,medium,unknown,tcf,sub35,unknown,13,5,unknown,15,generous,unknown,unknown,unknown,unknown,good
+2,medium,medium,unknown,unknown,sub40,unknown,unknown,4,unknown,12,generous,unknown,full,unknown,full,good
+2,low,low,unknown,unknown,equal40,none,unknown,unknown,unknown,11,"below average",unknown,unknown,unknown,unknown,bad
+3,medium,medium,medium,tcf,sub35,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,good
+2,medium,medium,unknown,unknown,equal40,unknown,unknown,4,unknown,10,generous,unknown,half,unknown,full,good
+1,high,unknown,unknown,unknown,sub40,unknown,8,3,unknown,9,generous,unknown,unknown,unknown,unknown,good
+3,low,low,low,none,equal40,none,unknown,unknown,unknown,10,"below average",unknown,half,yes,full,bad
+2,medium,medium,unknown,tcf,unknown,unknown,unknown,unknown,yes,10,"below average",yes,none,unknown,half,good
+2,low,low,unknown,none,sub35,unknown,unknown,unknown,yes,12,generous,unknown,unknown,yes,full,good
+2,medium,medium,unknown,none,sub40,unknown,unknown,5,no,11,"below average",yes,full,yes,full,good
+3,low,low,unknown,unknown,sub35,none,unknown,unknown,unknown,10,average,unknown,unknown,yes,full,bad
+3,medium,medium,medium,none,equal40,unknown,unknown,unknown,no,11,average,unknown,half,unknown,unknown,good
+3,low,low,low,tc,equal40,none,unknown,5,no,10,"below average",yes,half,yes,full,bad
+2,low,low,unknown,unknown,sub40,empl_contr,unknown,unknown,unknown,10,average,unknown,unknown,unknown,unknown,bad
+2,medium,medium,unknown,none,equal40,none,unknown,3,no,10,"below average",no,none,unknown,none,bad
+3,low,low,low,tc,equal40,none,2,1,no,10,"below average",no,half,yes,full,bad
+2,low,low,unknown,none,equal40,none,unknown,unknown,no,11,average,yes,none,yes,full,bad
+1,low,unknown,unknown,tc,equal40,ret_allw,4,0,no,11,generous,no,none,no,none,bad
+1,low,unknown,unknown,none,sub40,empl_contr,2,3,no,9,"below average",yes,half,unknown,none,bad
+3,low,low,low,unknown,sub40,empl_contr,unknown,unknown,unknown,10,average,unknown,unknown,yes,none,bad
+2,medium,medium,unknown,none,equal40,unknown,unknown,4,unknown,12,average,yes,full,yes,half,good

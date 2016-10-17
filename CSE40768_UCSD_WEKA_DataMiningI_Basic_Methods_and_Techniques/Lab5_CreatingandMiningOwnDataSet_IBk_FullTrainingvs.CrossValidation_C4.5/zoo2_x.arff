@@ -1,0 +1,123 @@
+@relation zoo_filtered-weka.filters.unsupervised.instance.NonSparseToSparse
+
+@attribute hair {false,true}
+@attribute feathers {false,true}
+@attribute eggs {false,true}
+@attribute milk {false,true}
+@attribute airborne {false,true}
+@attribute aquatic {false,true}
+@attribute predator {false,true}
+@attribute toothed {false,true}
+@attribute backbone {false,true}
+@attribute breathes {false,true}
+@attribute venomous {false,true}
+@attribute fins {false,true}
+@attribute legs {0,1,2,3,4,5,6,7,8,9}
+@attribute tail {false,true}
+@attribute domestic {false,true}
+@attribute catsize {false,true}
+@attribute type {1,2,3,4,5,6,7}
+
+@data
+
+{0 true,3 true,6 true,7 true,8 true,9 true,12 4,15 true}
+{0 true,3 true,7 true,8 true,9 true,12 4,13 true,15 true}
+{2 true,5 true,6 true,7 true,8 true,11 true,13 true,16 4}
+{0 true,3 true,6 true,7 true,8 true,9 true,12 4,15 true}
+{0 true,3 true,6 true,7 true,8 true,9 true,12 4,13 true,15 true}
+{0 true,3 true,7 true,8 true,9 true,12 4,13 true,15 true}
+{0 true,3 true,7 true,8 true,9 true,12 4,13 true,14 true,15 true}
+{2 true,5 true,7 true,8 true,11 true,13 true,14 true,16 4}
+{2 true,5 true,6 true,7 true,8 true,11 true,13 true,16 4}
+{0 true,3 true,7 true,8 true,9 true,12 4,14 true}
+{0 true,3 true,6 true,7 true,8 true,9 true,12 4,13 true,15 true}
+{1 true,2 true,4 true,8 true,9 true,12 2,13 true,14 true,16 2}
+{2 true,5 true,6 true,7 true,8 true,11 true,13 true,16 4}
+{2 true,6 true,16 7}
+{2 true,5 true,6 true,12 4,16 7}
+{2 true,5 true,6 true,12 6,16 7}
+{1 true,2 true,4 true,6 true,8 true,9 true,12 2,13 true,16 2}
+{0 true,3 true,7 true,8 true,9 true,12 4,13 true,15 true}
+{2 true,5 true,6 true,7 true,8 true,11 true,13 true,15 true,16 4}
+{3 true,5 true,6 true,7 true,8 true,9 true,11 true,13 true,15 true}
+{1 true,2 true,4 true,8 true,9 true,12 2,13 true,14 true,16 2}
+{1 true,2 true,4 true,5 true,8 true,9 true,12 2,13 true,16 2}
+{0 true,3 true,7 true,8 true,9 true,12 4,13 true,15 true}
+{1 true,2 true,4 true,8 true,9 true,12 2,13 true,15 true,16 2}
+{2 true,9 true,12 6,16 6}
+{2 true,5 true,6 true,7 true,8 true,9 true,12 4,16 5}
+{2 true,5 true,6 true,7 true,8 true,9 true,10 true,12 4,16 5}
+{0 true,3 true,4 true,7 true,8 true,9 true,12 2,13 true}
+{0 true,3 true,7 true,8 true,9 true,12 4,13 true,15 true}
+{0 true,3 true,6 true,7 true,8 true,9 true,12 2,14 true,15 true}
+{2 true,4 true,9 true,12 6,16 6}
+{0 true,3 true,7 true,8 true,9 true,12 4,13 true,14 true,15 true}
+{0 true,3 true,7 true,8 true,9 true,12 2,15 true}
+{1 true,2 true,4 true,5 true,6 true,8 true,9 true,12 2,13 true,16 2}
+{2 true,5 true,7 true,8 true,11 true,13 true,16 4}
+{0 true,3 true,7 true,8 true,9 true,12 4,13 true,14 true}
+{0 true,3 true,7 true,8 true,9 true,12 4,13 true}
+{1 true,2 true,4 true,6 true,8 true,9 true,12 2,13 true,16 2}
+{2 true,5 true,6 true,7 true,8 true,11 true,13 true,16 4}
+{0 true,2 true,4 true,9 true,10 true,12 6,14 true,16 6}
+{0 true,2 true,4 true,9 true,12 6,16 6}
+{1 true,2 true,6 true,8 true,9 true,12 2,13 true,16 2}
+{2 true,4 true,6 true,9 true,12 6,16 6}
+{1 true,2 true,4 true,8 true,9 true,12 2,13 true,16 2}
+{0 true,3 true,6 true,7 true,8 true,9 true,12 4,13 true,15 true}
+{0 true,3 true,6 true,7 true,8 true,9 true,12 4,13 true,15 true}
+{2 true,5 true,6 true,12 6,16 7}
+{0 true,3 true,6 true,7 true,8 true,9 true,12 4,13 true,15 true}
+{0 true,3 true,5 true,6 true,7 true,8 true,9 true,12 4,13 true,15 true}
+{0 true,3 true,6 true,7 true,8 true,9 true,12 4,13 true}
+{0 true,3 true,6 true,7 true,8 true,9 true,12 4,13 true,15 true}
+{0 true,2 true,4 true,9 true,12 6,16 6}
+{2 true,5 true,6 true,7 true,8 true,9 true,12 4,13 true,16 5}
+{2 true,5 true,6 true,12 8,15 true,16 7}
+{0 true,3 true,6 true,7 true,8 true,9 true,12 4,13 true}
+{0 true,3 true,7 true,8 true,9 true,12 4,13 true,15 true}
+{1 true,2 true,8 true,9 true,12 2,13 true,15 true,16 2}
+{1 true,2 true,4 true,8 true,9 true,12 2,13 true,14 true,16 2}
+{1 true,2 true,5 true,6 true,8 true,9 true,12 2,13 true,15 true,16 2}
+{1 true,2 true,4 true,8 true,9 true,12 2,13 true,16 2}
+{2 true,5 true,6 true,7 true,8 true,11 true,13 true,15 true,16 4}
+{2 true,5 true,6 true,7 true,8 true,11 true,13 true,16 4}
+{2 true,6 true,7 true,8 true,9 true,10 true,13 true,16 3}
+{0 true,2 true,3 true,5 true,6 true,8 true,9 true,12 4,13 true,15 true}
+{0 true,3 true,6 true,7 true,8 true,9 true,12 4,13 true,15 true}
+{0 true,3 true,7 true,8 true,9 true,12 4,13 true,14 true,15 true}
+{3 true,5 true,6 true,7 true,8 true,9 true,11 true,13 true,15 true}
+{0 true,3 true,6 true,7 true,8 true,9 true,12 4,13 true,15 true}
+{0 true,3 true,6 true,7 true,8 true,9 true,12 4,13 true,14 true,15 true}
+{0 true,3 true,6 true,7 true,8 true,9 true,12 4,13 true,15 true}
+{0 true,3 true,7 true,8 true,9 true,12 4,13 true,14 true,15 true}
+{1 true,2 true,6 true,8 true,9 true,12 2,13 true,15 true,16 2}
+{6 true,9 true,10 true,12 8,13 true,16 7}
+{2 true,5 true,7 true,8 true,11 true,13 true,16 4}
+{0 true,3 true,5 true,6 true,7 true,8 true,9 true,11 true,15 true}
+{0 true,3 true,5 true,6 true,7 true,8 true,9 true,11 true,12 2,13 true,15 true}
+{5 true,6 true,7 true,8 true,10 true,13 true,16 3}
+{2 true,5 true,6 true,10 true,16 7}
+{1 true,2 true,4 true,5 true,6 true,8 true,9 true,12 2,13 true,16 2}
+{1 true,2 true,4 true,5 true,6 true,8 true,9 true,12 2,13 true,16 2}
+{2 true,6 true,7 true,8 true,9 true,13 true,16 3}
+{2 true,9 true,16 7}
+{2 true,5 true,7 true,8 true,11 true,13 true,16 4}
+{1 true,2 true,4 true,8 true,9 true,12 2,13 true,16 2}
+{0 true,3 true,7 true,8 true,9 true,12 2,13 true}
+{2 true,5 true,6 true,12 5,16 7}
+{2 true,5 true,6 true,7 true,8 true,10 true,11 true,13 true,15 true,16 4}
+{1 true,2 true,4 true,5 true,8 true,9 true,12 2,13 true,15 true,16 2}
+{2 true,9 true,12 6,16 6}
+{2 true,5 true,7 true,8 true,9 true,12 4,16 5}
+{2 true,8 true,9 true,12 4,13 true,15 true,16 3}
+{2 true,6 true,7 true,8 true,9 true,12 4,13 true,16 3}
+{2 true,5 true,6 true,7 true,8 true,11 true,13 true,15 true,16 4}
+{0 true,3 true,4 true,7 true,8 true,9 true,12 2,13 true}
+{0 true,3 true,7 true,8 true,9 true,12 4,13 true}
+{1 true,2 true,4 true,6 true,8 true,9 true,12 2,13 true,15 true,16 2}
+{0 true,3 true,7 true,8 true,9 true,12 2,13 true,15 true}
+{0 true,2 true,4 true,9 true,10 true,12 6,16 6}
+{0 true,3 true,6 true,7 true,8 true,9 true,12 4,13 true,15 true}
+{2 true,9 true,16 7}
+{1 true,2 true,4 true,8 true,9 true,12 2,13 true,16 2}
