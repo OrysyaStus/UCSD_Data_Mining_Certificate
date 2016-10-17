@@ -1,0 +1,23 @@
+Field	Usage	Type	Min	Max	Distinct	Empty	Conf	Req	Lin	Variance
+Gender	I	C	-	-	4	446	0.999	872	0.005	0.14941
+City	X	X								
+State	I	C	-	-	53	45	1	2242	0.024	0.73832
+ZIP3	I	C	-	-	588	948	0.988	4079	0.144	4.14389
+StoreCd	I	C	-	-	977	4103	0.988	9755	0.1	4.90151
+Source	I	C	-	-	12	143	1	870	0.014	0.42769
+Age	I	N	19	50	5	3337	0.98	23271	0.982	0.10438
+YearsRunning	I	N	0	10	6	8050	0.975	18558	0.995	0.04399
+Miles/Week	I	N	0	51	8	10730	0.966	15878	0.979	0.17312
+Races/Year	I	N	0	10	6	16972	0.974	9636	0.982	0.10084
+Triathlete	I	C	-	-	3	5230	0.999	7410	0	0.08228
+Style	I	C	-	-	84	4168	1	2298	0.037	1.0665
+ShoeCode	I	C	-	-	847	768	0.989	7665	0.111	4.5558
+PurchaseNumber	P	N	1	2	2	0	0.982	26608	1	0.00651
+										
+Removed	Reason	Notes								
+Miles/Week	Too many empty	No new stats found								
+Races/Year	Too many empty	No new stats found								
+										
+										
+										
+26608 Total Instances										
