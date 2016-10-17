@@ -1,0 +1,53 @@
+AK	Alaska	USA	656425
+AL	Alabama	USA-Continental	52423
+AR	Arkansas	USA-Continental	53182
+AZ	Arizona	USA-Continental	114006
+CA	California	USA-Continental	163707
+CO	Colorado	USA-Continental	104100
+CO	Connecticut	USA-Continental	5544
+DC	District of Columbia	USA-Continental	68
+DE	Delaware	USA-Continental	2489
+FL	Florida	USA-Continental	65758
+GA	Georgia	USA-Continental	59441
+HI	Hawaii	USA	10932
+IA	Iowa	USA-Continental	56276
+ID	Idaho	USA-Continental	83574
+IL	Illinois	USA-Continental	57918
+IN	Indiana	USA-Continental	36420
+KS	Kansas	USA-Continental	82282
+KY	Kentucky	USA-Continental	40411
+LA	Louisiana	USA-Continental	51843
+MA	Massachusetts	USA-Continental	10555
+MD	Maryland	USA-Continental	12407
+ME	Maine	USA-Continental	35387
+MI	Michigan	USA-Continental	96810
+MN	Minnesota	USA-Continental	86943
+MO	Missouri	USA-Continental	69709
+MS	Mississippi	USA-Continental	48434
+MT	Montana	USA-Continental	147046
+NC	North	Carolina USA-Continental	53821
+ND	North	Dakota USA-Continental	70704
+NE	Nebraska	USA-Continental	77358
+NH	New Hampshire	USA-Continental	9351
+NJ	New Jersey	USA-Continental	8722
+NH	New Hampshire	USA-Continental	9351
+NM	New Mexico	USA-Continental	121593
+NV	Nevada	USA-Continental	110567
+NY	New York	USA-Continental	54475
+OK	Oklahoma	USA-Continental	69903
+OH	Ohio	USA-Continental	44828
+OR	Oregon	USA-Continental	98386
+PA	Pennsylvania	USA-Continental	46058
+RI	Rhode Island	USA-Continental	1545
+SC	South Carolina	USA-Continental	32007
+SD	South Dakota	USA-Continental	77121
+TN	Tennessee	USA-Continental	42146
+TX	Texas	USA-Continental	268601
+UT	Utah	USA-Continental	84904
+VA	Virginia	USA-Continental	42769
+VI	US Virgin Islands	Other	1545
+VT	Vermont	USA-Continental	9615
+WA	Washington	USA-Continental	71303
+WI	Wisconsin	USA-Continental	65503
+WV	West Virginia	USA-Continental	24231
+WY	Wyoming	USA-Continental	97818
