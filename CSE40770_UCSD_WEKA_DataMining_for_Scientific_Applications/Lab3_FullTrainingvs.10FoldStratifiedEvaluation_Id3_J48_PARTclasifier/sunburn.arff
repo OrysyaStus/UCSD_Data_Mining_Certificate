@@ -1,0 +1,20 @@
+%
+% SUNBURN DATA
+% Based on example in: Winston, _Artificial Intelligence_, 3rd ed., pg. 424ff
+%
+@RELATION 'sunburn'
+@ATTRIBUTE 'hair'   {blonde, brown, red}
+@ATTRIBUTE 'height' {short, average, tall}
+@ATTRIBUTE 'weight'   {light, average, heavy}
+@ATTRIBUTE 'lotion' {yes,no}
+@ATTRIBUTE 'burned' {burned, none}
+
+@DATA
+blonde,	average,light,	no, burned
+blonde,	tall,	average,yes, none
+brown,	short,	average,yes, none
+blonde,	short,	average,no, burned
+red,	average,heavy,	no, burned
+brown,	tall,	heavy,	no, none
+brown,	average,heavy,	no, none
+blonde,	short,	light,	yes, none

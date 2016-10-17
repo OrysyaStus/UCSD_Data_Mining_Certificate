@@ -1,0 +1,20 @@
+%This is derived from Langley's book, figure 5.4. % % 
+
+@relation 'Imaginary disease' 
+@attribute Class {manic,normal} 
+@attribute CellWall {thick,thin} 
+@attribute Nuclei {1,2} 
+@attribute Tails {1,2} 
+@attribute Colour {light,dark} 
+
+@data 
+manic,thin,2,2,light 
+normal,thin,1,2,light 
+manic,thin,2,2,dark 
+normal,thin,2,1,light 
+manic,thick,2,2,light 
+normal,thick,1,1,light 
+manic,thick,2,2,dark 
+normal,thin,1,1,dark 
+manic,thick,1,1,dark 
+manic,thick,2,1,dark 
