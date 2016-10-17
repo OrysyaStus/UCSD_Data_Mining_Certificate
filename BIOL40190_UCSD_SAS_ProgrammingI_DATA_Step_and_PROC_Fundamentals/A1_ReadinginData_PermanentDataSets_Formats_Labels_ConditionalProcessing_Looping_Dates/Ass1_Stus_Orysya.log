@@ -1,0 +1,150 @@
+1                                                          The SAS System                              18:52 Tuesday, April 19, 2016
+
+1          ;*';*";*/;quit;run;
+2          OPTIONS PAGENO=MIN;
+3          %LET _CLIENTTASKLABEL='HW1';
+4          %LET _CLIENTPROJECTPATH='';
+5          %LET _CLIENTPROJECTNAME='';
+6          %LET _SASPROGRAMFILE=;
+7          
+8          ODS _ALL_ CLOSE;
+9          OPTIONS DEV=ACTIVEX;
+10         GOPTIONS XPIXELS=0 YPIXELS=0;
+11         FILENAME EGSR TEMP;
+12         ODS tagsets.sasreport13(ID=EGSR) FILE=EGSR
+13             STYLE=HtmlBlue
+14             STYLESHEET=(URL="file:///C:/Program%20Files/SASHome/SASEnterpriseGuide/7.1/Styles/HtmlBlue.css")
+15             NOGTITLE
+16             NOGFOOTNOTE
+17             GPATH=&sasworklocation
+18             ENCODING=UTF8
+19             options(rolap="on")
+20         ;
+NOTE: Writing TAGSETS.SASREPORT13(EGSR) Body file: EGSR
+21         
+22         GOPTIONS ACCESSIBLE;
+23         /* Orysya Stus		SAS Programming: Programming Assignment 1 */
+24         
+25         *1. Read in the data in suppTRP-1062.txt, use the csv file method for reading in data;
+26         data STUDY;
+27         	*length Site $1 Pt $2;
+28         	infile "/courses/dc4508e5ba27fe300/c_629/suppTRP-1062.txt" dsd missover;
+29         	input Site : $1.
+30         		Pt : $2.
+31         		Sex
+32         		Race
+33         		Dosedate : mmddyy10.
+34         		Height
+35         		Weight
+36         		Result1-Result3;
+37         	format Dosedate mmddyy10.;
+38         *2. Using if-then statements and data constants, create a new variable called Doselot;
+39         	if . < Dosedate <= '01JAN1998'd then Doselot = 'S0576';
+40         		else if '01JAN1998'd < Dosedate <= '10JAN1998'd then Doselot = 'P1122';
+41         		else if Dosedate > '10JAN1998'd then Doselot = 'P0526';
+42         		else Doselot = .;
+43         *3. Create 2 new variables called prot_amend and limit that meet the criteria below;
+44         	if Doselot = 'P0526' then prot_amend = 'B';
+45         		else if Doselot = 'S0576' or Doselot = 'P1122' then prot_amend = 'A';
+46         		else prot_amend = .;
+47         	if Sex = 1 and Doselot = 'P0526' then Limit = 0.03;
+48         		else if Sex = 2 and Doselot = 'P0526' then Limit = 0.02;
+49         		else if Doselot = 'S0576' or Doselot = 'P1122' then Limit = 0.02;
+50         		else Limit = .;
+51         *4. Using a select statement, use the variable Site to create a new variable called site_name which contains the name of
+51       ! the Study Site;
+52         	select;
+53         		when (Site = 'J') site_name = 'Aurora Health Associates';
+54         		when (Site = 'Q') site_name = 'Omaha Medical Center';
+55         		when (Site = 'R') site_name = 'Sherwin Heights Healthcare';
+56         		otherwise site_name = .;
+2                                                          The SAS System                              18:52 Tuesday, April 19, 2016
+
+57         	end;
+58         *5. Create and apply formats to the Sex and Race variables;
+
+NOTE: Numeric values have been converted to character values at the places given by: (Line):(Column).
+      42:18   46:21   56:25   
+NOTE: The infile "/courses/dc4508e5ba27fe300/c_629/suppTRP-1062.txt" is:
+      Filename=/courses/dc4508e5ba27fe300/c_629/suppTRP-1062.txt,
+      Owner Name=justina.flavin,Group Name=oda,
+      Access Permission=-rw-r-----,
+      Last Modified=19Mar2011:20:31:59,
+      File Size (bytes)=537
+
+NOTE: 15 records were read from the infile "/courses/dc4508e5ba27fe300/c_629/suppTRP-1062.txt".
+      The minimum record length was 21.
+      The maximum record length was 38.
+NOTE: The data set WORK.STUDY has 15 observations and 14 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.14 seconds
+      user cpu time       0.02 seconds
+      system cpu time     0.00 seconds
+      memory              800.00k
+      OS Memory           18344.00k
+      Timestamp           04/19/2016 06:52:57 PM
+      Step Count                        2  Switch Count  181
+      Page Faults                       0
+      Page Reclaims                     523
+      Page Swaps                        0
+      Voluntary Context Switches        701
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           264
+      
+59         proc format;
+
+60         	
+60       !  value $Sex
+61         		1 = 'Female'
+62         		2 = 'Male';
+NOTE: Format $SEX has been output.
+63         	
+63       !  value $Race
+64         		1 = 'Asian'
+65         		2 = 'Black'
+66         		3 = 'Caucasian'
+67         		4 = 'Other';
+NOTE: Format $RACE has been output.
+68         *6. Using the descriptive information provided previously, create labels for these variables;
+69         	label Site = 'Study Site'
+70         		Pt = 'Patient'
+71         		Dosedate = 'Dose Date'
+72         		Doselot = 'Dose Lot'
+73         		prot_amend = 'Protocol Amendment'
+74         		Limit = 'Lower Limit of Detection'
+75         		site_name = 'Site Name';
+76         run;
+
+NOTE: PROCEDURE FORMAT used (Total process time):
+      real time           0.01 seconds
+3                                                          The SAS System                              18:52 Tuesday, April 19, 2016
+
+      user cpu time       0.00 seconds
+      system cpu time     0.01 seconds
+      memory              154.56k
+      OS Memory           18084.00k
+      Timestamp           04/19/2016 06:52:57 PM
+      Step Count                        3  Switch Count  97
+      Page Faults                       0
+      Page Reclaims                     80
+      Page Swaps                        0
+      Voluntary Context Switches        321
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           56
+      
+
+77         
+78         GOPTIONS NOACCESSIBLE;
+79         %LET _CLIENTTASKLABEL=;
+80         %LET _CLIENTPROJECTPATH=;
+81         %LET _CLIENTPROJECTNAME=;
+82         %LET _SASPROGRAMFILE=;
+83         
+84         ;*';*";*/;quit;run;
+85         ODS _ALL_ CLOSE;
+86         
+87         
+88         QUIT; RUN;
+89         
