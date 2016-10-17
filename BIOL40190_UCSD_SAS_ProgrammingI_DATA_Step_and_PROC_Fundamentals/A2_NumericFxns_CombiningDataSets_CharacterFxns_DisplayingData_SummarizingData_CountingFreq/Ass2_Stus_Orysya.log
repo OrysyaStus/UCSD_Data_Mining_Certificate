@@ -1,0 +1,673 @@
+1                                                          The SAS System                               00:41 Saturday, May 14, 2016
+
+1          ;*';*";*/;quit;run;
+2          OPTIONS PAGENO=MIN;
+3          %LET _CLIENTTASKLABEL='Ass2_Stus_Orysya';
+4          %LET _CLIENTPROJECTPATH='';
+5          %LET _CLIENTPROJECTNAME='';
+6          %LET _SASPROGRAMFILE=;
+7          
+8          ODS _ALL_ CLOSE;
+9          OPTIONS DEV=ACTIVEX;
+10         GOPTIONS XPIXELS=0 YPIXELS=0;
+11         ODS LISTING GPATH=&sasworklocation;
+12         FILENAME EGHTML TEMP;
+13         ODS HTML(ID=EGHTML) FILE=EGHTML
+14             ENCODING='utf-8'
+15             STYLE=HtmlBlue
+16             STYLESHEET=(URL="file:///C:/Program%20Files/SASHome/SASEnterpriseGuide/7.1/Styles/HtmlBlue.css")
+17             ATTRIBUTES=("CODEBASE"="http://www2.sas.com/codebase/graph/v94/sasgraph.exe#version=9,4")
+18             NOGTITLE
+19             NOGFOOTNOTE
+20             GPATH=&sasworklocation
+21         ;
+NOTE: Writing HTML(EGHTML) Body file: EGHTML
+22         FILENAME EGRTF TEMP;
+23         ODS RTF(ID=EGRTF) FILE=EGRTF
+24             ENCODING='utf-8'
+25             STYLE=Rtf
+26             NOGTITLE
+27             NOGFOOTNOTE
+28         ;
+NOTE: Writing RTF Body file: EGRTF
+29         FILENAME EGPDF TEMP;
+30         ODS PDF(ID=EGPDF) FILE=EGPDF STYLE=Pearl SAS;
+WARNING: Unsupported device 'ACTIVEX' for PDF(EGPDF) destination. Using device 'ACTXIMG'.
+NOTE: Writing ODS PDF(EGPDF) output to DISK destination "EGPDF", printer "PDF".
+31         FILENAME EGSR TEMP;
+32         ODS tagsets.sasreport13(ID=EGSR) FILE=EGSR
+33             STYLE=HtmlBlue
+34             STYLESHEET=(URL="file:///C:/Program%20Files/SASHome/SASEnterpriseGuide/7.1/Styles/HtmlBlue.css")
+35             NOGTITLE
+36             NOGFOOTNOTE
+37             GPATH=&sasworklocation
+38             ENCODING=UTF8
+39             options(rolap="on")
+40         ;
+NOTE: Writing TAGSETS.SASREPORT13(EGSR) Body file: EGSR
+41         
+42         GOPTIONS ACCESSIBLE;
+43         /* Orysya Stus		SAS Programming: Programming Assignment 2 */
+44         
+45         /*
+46         1-6 – Create the data set STUDY using your corrected code for Assignment 1.
+47         */
+48         
+49         proc format;
+50           value sex
+51             1=Female
+52             2=Male
+53              ;
+2                                                          The SAS System                               00:41 Saturday, May 14, 2016
+
+NOTE: Format SEX has been output.
+54           value race
+55             1=Asian
+56             2=Black
+57             3=Caucasian
+58             4=Other
+59              ;
+NOTE: Format RACE has been output.
+60         run;
+
+NOTE: PROCEDURE FORMAT used (Total process time):
+      real time           0.01 seconds
+      user cpu time       0.00 seconds
+      system cpu time     0.00 seconds
+      memory              181.37k
+      OS Memory           28584.00k
+      Timestamp           05/14/2016 12:41:39 AM
+      Step Count                        2  Switch Count  71
+      Page Faults                       0
+      Page Reclaims                     93
+      Page Swaps                        0
+      Voluntary Context Switches        235
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           56
+      
+
+61         
+62         *1. Read in the data in suppTRP-1062.txt, use the csv file method for reading in data;
+63         data STUDY;
+64         	*length Site $1 Pt $2;
+65         	infile "/courses/dc4508e5ba27fe300/c_629/suppTRP-1062.txt" dsd missover;
+66         	input site : $1.
+67         		pt : $2.
+68         		sex
+69         		race
+70         		dosedate : mmddyy10.
+71         		height
+72         		weight
+73         		result1-result3;
+74         	format dosedate mmddyy10.;
+75         *2. Using if-then statements and data constants, create a new variable called Doselot;
+76         	if '01JAN1997'd <= dosedate <= '31DEC1997'd then doselot='S0576';
+77           	else if '31DEC1997'd < dosedate <= '10JAN1998'd then doselot='P1122';
+78           	else if dosedate > '10JAN1998'd then doselot='P0526';
+79         
+80         *3. Create 2 new variables called prot_amend and limit that meet the criteria below;
+81         	if doselot='P0526' then do;
+82             	prot_amend='B';
+83             	if sex=1 then limit=0.03;
+84             	else if sex=2 then limit=0.02;
+85           	end;
+86           	else if doselot = 'S0576' or doselot='P1122' then do;
+87             	prot_amend='A';
+88             	limit=0.02;
+89           	end;
+90         
+91         *4. Using a select statement, use the variable Site to create a new variable called site_name which contains the name of
+3                                                          The SAS System                               00:41 Saturday, May 14, 2016
+
+91       ! the Study Site;
+92         length site_name $30;
+93         	select;
+94         		when (Site = 'J') site_name = 'Aurora Health Associates';
+95         		when (Site = 'Q') site_name = 'Omaha Medical Center';
+96         		when (Site = 'R') site_name = 'Sherwin Heights Healthcare';
+97         		otherwise site_name = .;
+98         	end;
+99         *5. Create and apply formats to the Sex and Race variables;
+100        
+101        	format sex sex. race race. dosedate date.;
+102        
+103        
+104        *6. Using the descriptive information provided previously, create labels for these variables;
+105          	label site='Study Site'
+106                pt='Patient'
+107                dosedate='Dose Date'
+108                doselot='Dose Lot'
+109                prot_amend='Protocol Amendment'
+110                limit='Lower Limit of Detection'
+111                site_name='Site Name';
+112        run;
+
+NOTE: Numeric values have been converted to character values at the places given by: (Line):(Column).
+      97:25   
+NOTE: The infile "/courses/dc4508e5ba27fe300/c_629/suppTRP-1062.txt" is:
+      Filename=/courses/dc4508e5ba27fe300/c_629/suppTRP-1062.txt,
+      Owner Name=justina.flavin,Group Name=oda,
+      Access Permission=-rw-r-----,
+      Last Modified=19Mar2011:20:31:59,
+      File Size (bytes)=537
+
+NOTE: 15 records were read from the infile "/courses/dc4508e5ba27fe300/c_629/suppTRP-1062.txt".
+      The minimum record length was 21.
+      The maximum record length was 38.
+NOTE: The data set WORK.STUDY has 15 observations and 14 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.05 seconds
+      user cpu time       0.01 seconds
+      system cpu time     0.01 seconds
+      memory              828.59k
+      OS Memory           29612.00k
+      Timestamp           05/14/2016 12:41:39 AM
+      Step Count                        3  Switch Count  248
+      Page Faults                       0
+      Page Reclaims                     423
+      Page Swaps                        0
+      Voluntary Context Switches        955
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           264
+      
+
+113        
+114        /*
+115        7 – DEMOG1062 is a permanent SAS data set located on the server in the directory
+116        /courses/dc4508e5ba27fe300/c_629/saslib
+117        Create a new data set called PAT_INFO by merging STUDY and DEMOG1062 by their two common variables.
+4                                                          The SAS System                               00:41 Saturday, May 14, 2016
+
+118        Also add items in 8-12 to PAT_INFO.
+119        Note: Your code should create a single data set called PAT_INFO, which contains the merge code and items 8-12.
+120        PAT_INFO should contain 15 observations and 21 variables.
+121        Referenced notes on Ch.4 & Ch. 10
+122        */
+123        
+124        libname mydata "/courses/dc4508e5ba27fe300/c_629/saslib" access=readonly;
+NOTE: Libref MYDATA was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /courses/dc4508e5ba27fe300/c_629/saslib
+125        proc sort data=mydata.demog1062 out=demog1062;
+NOTE: Data file MYDATA.DEMOG1062.DATA is in a format that is native to another host, or the file encoding does not match the 
+      session encoding. Cross Environment Data Access will be used, which might require additional CPU resources and might reduce 
+      performance.
+126           by site pt;
+127        
+
+NOTE: There were 15 observations read from the data set MYDATA.DEMOG1062.
+NOTE: The data set WORK.DEMOG1062 has 15 observations and 4 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      user cpu time       0.01 seconds
+      system cpu time     0.00 seconds
+      memory              1178.62k
+      OS Memory           30128.00k
+      Timestamp           05/14/2016 12:41:39 AM
+      Step Count                        4  Switch Count  39
+      Page Faults                       0
+      Page Reclaims                     219
+      Page Swaps                        0
+      Voluntary Context Switches        106
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           272
+      
+128        proc sort data=study;
+
+129           by site pt;
+130        
+
+NOTE: There were 15 observations read from the data set WORK.STUDY.
+NOTE: The data set WORK.STUDY has 15 observations and 14 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      user cpu time       0.00 seconds
+      system cpu time     0.00 seconds
+      memory              775.75k
+      OS Memory           30128.00k
+      Timestamp           05/14/2016 12:41:39 AM
+      Step Count                        5  Switch Count  31
+      Page Faults                       0
+      Page Reclaims                     79
+      Page Swaps                        0
+      Voluntary Context Switches        70
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           264
+      
+5                                                          The SAS System                               00:41 Saturday, May 14, 2016
+
+131        data PAT_INFO;
+
+132           merge study demog1062;
+133           by site pt;
+134        /*
+135        8 – Using 1 programming statement, create a variable called pt_id by concatenating Site and Pt and adding a
+136        hyphen between the two variables.
+137        An example value of pt_id should look like: Z-99. Label the variable ‘Site-Patient’.
+138        If either Site or Pt are missing then pt_id should be missing.
+139        Referenced notes from Ch.12
+140        */
+141           if not missing(site) or not missing(pt) then pt_id = catx('-', site, pt);
+142        	else pt_id = .;
+143        	label pt_id = 'Site-Patient';
+144        /*
+145        9 – Using 2 functions (one function will be embedded within the other) to create a variable dose_qtr by
+146        concatenating the letter ‘Q’ to the number which corresponds to the quarter of the year in which the dose date falls.
+147        Values of dose_qtr should look like Q1, Q2, etc. If the dose date is missing then dose_qtr should be missing.
+148        Use 1 programming statement for this item.
+149        Referenced notes from Ch. 9 & Ch. 12
+150        */
+151           if not missing(dosedate) then dose_qtr = cats('Q', QTR(dosedate));
+152           else dose_qtr = .;
+153        /*
+154        10 – Use a function to create a variable mean_result which is the mean of result1, result2, and result3.
+155        The mean should be calculated using all non-missing values of the three variables.
+156        Format mean_result to 2 decimal places.
+157        Referenced notes from Ch. 11
+158        */
+159        	mean_result = mean(result1, result2, result3);
+160        	format mean_result 5.2;
+161        /*
+162        11 – Create a variable BMI which is calculated as: Weight ÷ (Height)2 x 703
+163        If either Weight or Height are missing then BMI should be missing.
+164        Format BMI to 1 decimal place.
+165        References notes from Ch. 11
+166        */
+167        	BMI = weight/(height)**2 *703;
+168        	format BMI 4.1;
+169        /*
+170        12 – Create a variable est_end which is the Estimated Termination Date for the patient. Use an assignment statement.
+171        Do not use a function. If Protocol Amendment is missing then est_end should be missing.
+172        If Protocol Amendment is A then est_end is 120 days after Dose Date.
+173        If Protocol Amendment is B then est_end is 90 days after Dose Date.
+174        Apply a format so that the est_end is displayed as mm/dd/yyyy.
+175        Label the variable ‘Estimated Termination Date’.
+176        Referenced notes from Ch.9
+177        	*/
+178        	if prot_amend = 'A' then est_end = dosedate + 100;
+179        	if prot_amend = 'B' then est_end = dosedate + 90;
+180        	else if missing(prot_amend) then est_end = .;
+181        	format est_end mmddyy10.;
+182        	label est_end = "Estimated Termination Date";
+183        run;
+
+NOTE: Numeric values have been converted to character values at the places given by: (Line):(Column).
+      142:15   152:20   
+NOTE: There were 15 observations read from the data set WORK.STUDY.
+6                                                          The SAS System                               00:41 Saturday, May 14, 2016
+
+NOTE: There were 15 observations read from the data set WORK.DEMOG1062.
+NOTE: The data set WORK.PAT_INFO has 15 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      user cpu time       0.02 seconds
+      system cpu time     0.01 seconds
+      memory              1354.09k
+      OS Memory           30388.00k
+      Timestamp           05/14/2016 12:41:39 AM
+      Step Count                        6  Switch Count  239
+      Page Faults                       0
+      Page Reclaims                     432
+      Page Swaps                        0
+      Voluntary Context Switches        906
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           264
+      
+
+184        
+185        /*
+186        13 – Using the data set PAT_INFO, generate the following output using PROC PRINT:
+187        References notes from Ch. 14
+188        */
+189        proc print data= PAT_INFO label double;
+190        	title "Listing of Baseline Patient Information for Patients Having Weight > 250";
+191        	where weight gt 250;
+192        	by site site_name;
+193        	id site site_name;
+194        	var pt age sex race height weight dosedate doselot;
+195        	label site = "Study Site"
+196        		site_name = "Site Name"
+197        		pt = "Patient"
+198        		AGE = "Age"
+199        		sex = "Sex"
+200        		race = "Race"
+201        		height = "Height"
+202        		weight = "Weight"
+203        		dosedate = "Date of First Dose"
+204        		doselot = "Dose Lot Number";
+205        	format dosedate mmddyy8.;
+206        run;
+
+NOTE: There were 5 observations read from the data set WORK.PAT_INFO.
+      WHERE weight>250;
+NOTE: The PROCEDURE PRINT printed page 1.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.04 seconds
+      user cpu time       0.06 seconds
+      system cpu time     0.00 seconds
+      memory              3456.46k
+      OS Memory           32176.00k
+      Timestamp           05/14/2016 12:41:39 AM
+      Step Count                        7  Switch Count  131
+      Page Faults                       0
+      Page Reclaims                     999
+      Page Swaps                        0
+      Voluntary Context Switches        501
+7                                                          The SAS System                               00:41 Saturday, May 14, 2016
+
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           32
+      
+
+207        
+208        /*
+209        14 – Use the data set PAT_INFO and one PROC MEANS to do the following:
+210        Create output stratified by Sex for the variables Result1, Result2, Result3, Height, and Weight.
+211        The display should show the number of non-missing values, mean, standard error, minimum value, maximum value
+212        and be formatted to one decimal point.
+213        Also create an output data set that contains the median value of Weight stratified by Sex.
+214        The variable that contains the median value of weight should be called med_wt.
+215        Your output data set should contain two observations and two variables, Sex and med_wt.4.
+216        Referenced notes from Ch. 16
+217        */
+218        proc means data= PAT_INFO n mean stderr min max maxdec=1 nonobs nway;
+219        	class sex;
+220        	var result1 result2 result3 height weight;
+221        	output out = weight_by_sex (drop = _:)
+222        		median (sex weight) = Sex med_wt;
+223        run;
+
+WARNING: Variable Sex already exists on file WORK.WEIGHT_BY_SEX.
+WARNING: The duplicate variables will not be included in the output data set of the output statement number 1.
+NOTE: There were 15 observations read from the data set WORK.PAT_INFO.
+NOTE: The data set WORK.WEIGHT_BY_SEX has 2 observations and 2 variables.
+NOTE: The PROCEDURE MEANS printed page 2.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.03 seconds
+      user cpu time       0.04 seconds
+      system cpu time     0.00 seconds
+      memory              8719.06k
+      OS Memory           39876.00k
+      Timestamp           05/14/2016 12:41:39 AM
+      Step Count                        8  Switch Count  87
+      Page Faults                       0
+      Page Reclaims                     2448
+      Page Swaps                        0
+      Voluntary Context Switches        359
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           280
+      
+
+224        
+225        /*
+226        15 – Combine the data sets PAT_INFO and the output data set from item 14 by the variable Sex and
+227        create a new variable called wt_cat as follows:
+228        If the patient’s weight is less than or equal to the median weight for all patients of that sex, then wt_cat=1.
+229        If the patient’s weight is more than the median weight for all patients of that sex, then wt_cat=2.
+230        Label this variable 'Median Weight Category'.
+231        Create and apply a descriptive format to wt_cat:
+232        For wt_cat=1, the descriptor is ‘<= Median Weight’
+233        For wt_cat=2, the descriptor is ‘> Median Weight’
+234        Hint: Your new data set should contain 15 observations.
+235        References notes from Ch. 10
+236        */
+8                                                          The SAS System                               00:41 Saturday, May 14, 2016
+
+237        proc format;
+238          value wt_cat
+239            1= '<= Median Weight'
+240            2= '> Median Weight'
+241        	;
+NOTE: Format WT_CAT has been output.
+242        run;
+
+NOTE: PROCEDURE FORMAT used (Total process time):
+      real time           0.00 seconds
+      user cpu time       0.00 seconds
+      system cpu time     0.00 seconds
+      memory              99.31k
+      OS Memory           33960.00k
+      Timestamp           05/14/2016 12:41:39 AM
+      Step Count                        9  Switch Count  44
+      Page Faults                       0
+      Page Reclaims                     9
+      Page Swaps                        0
+      Voluntary Context Switches        123
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           0
+      
+
+243        
+244        proc sort data=PAT_INFO;
+245           by sex;
+246        
+
+NOTE: There were 15 observations read from the data set WORK.PAT_INFO.
+NOTE: The data set WORK.PAT_INFO has 15 observations and 21 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      user cpu time       0.00 seconds
+      system cpu time     0.00 seconds
+      memory              777.31k
+      OS Memory           34480.00k
+      Timestamp           05/14/2016 12:41:39 AM
+      Step Count                        10  Switch Count  33
+      Page Faults                       0
+      Page Reclaims                     84
+      Page Swaps                        0
+      Voluntary Context Switches        79
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           264
+      
+247        proc sort data=WEIGHT_BY_SEX;
+
+248           by sex;
+249        
+
+NOTE: There were 2 observations read from the data set WORK.WEIGHT_BY_SEX.
+NOTE: The data set WORK.WEIGHT_BY_SEX has 2 observations and 2 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      user cpu time       0.01 seconds
+9                                                          The SAS System                               00:41 Saturday, May 14, 2016
+
+      system cpu time     0.00 seconds
+      memory              793.06k
+      OS Memory           34480.00k
+      Timestamp           05/14/2016 12:41:39 AM
+      Step Count                        11  Switch Count  35
+      Page Faults                       0
+      Page Reclaims                     78
+      Page Swaps                        0
+      Voluntary Context Switches        70
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           264
+      
+250        data combine;
+
+251           merge PAT_INFO WEIGHT_BY_SEX;
+252           by sex;
+253           if weight <= med_wt then wt_cat = 1;
+254           if weight > med_wt then wt_cat = 2;
+255           label wt_cat = 'Median Weight Category';
+256        run;
+
+NOTE: There were 15 observations read from the data set WORK.PAT_INFO.
+NOTE: There were 2 observations read from the data set WORK.WEIGHT_BY_SEX.
+NOTE: The data set WORK.COMBINE has 15 observations and 23 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      user cpu time       0.01 seconds
+      system cpu time     0.00 seconds
+      memory              1277.21k
+      OS Memory           34740.00k
+      Timestamp           05/14/2016 12:41:39 AM
+      Step Count                        12  Switch Count  47
+      Page Faults                       0
+      Page Reclaims                     330
+      Page Swaps                        0
+      Voluntary Context Switches        134
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           264
+      
+
+257        
+258        /*
+259        16 – Using your data set from Item 15 and one PROC FREQ to do the following:
+260        Show the frequency distributions of (1) Dose Lot Numbers and (2) Median Weight Category. Exclude missing values
+261        from the frequency distributions. (3) Generate a two-way table for Race by Weight. Include missing values in the
+262        frequency distribution.
+263        Use formats to group Race and Weight variables as follows:
+264        If Race is Caucasian then display the race as ‘White’.
+265        If Race is anything else (including missing) then display the race as ‘Other’.
+266        Note: Give this new race format a different name than the race format created in the first part of the assignment.
+267        Group Weight into the following 4 categories: < 200, 200 to < 300, >= 300, Missing
+268        References notes from Ch. 17
+269        */
+270        proc format;
+271        	
+271      !  value Grouped_race
+10                                                         The SAS System                               00:41 Saturday, May 14, 2016
+
+272        		3 = 'White'
+273        		1 = 'Other'
+274        		2 = 'Other'
+275        		4 = 'Other'
+276        		. = 'Other';
+NOTE: Format GROUPED_RACE has been output.
+277        	
+277      !  value Grouped_weight
+278        		low-200 = 1
+279        		200-300 = 2
+280        		300-high = 3
+281        		. = 4;
+NOTE: Format GROUPED_WEIGHT has been output.
+282        run;
+
+NOTE: PROCEDURE FORMAT used (Total process time):
+      real time           0.00 seconds
+      user cpu time       0.01 seconds
+      system cpu time     0.00 seconds
+      memory              100.21k
+      OS Memory           33960.00k
+      Timestamp           05/14/2016 12:41:39 AM
+      Step Count                        13  Switch Count  78
+      Page Faults                       0
+      Page Reclaims                     9
+      Page Swaps                        0
+      Voluntary Context Switches        256
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           0
+      
+
+283        		
+284        proc freq data= combine order= formatted;
+285        	tables doselot wt_cat;
+286        	tables race * weight / missing;
+287        	format race Grouped_race. weight Grouped_weight.;
+288        run;
+
+NOTE: There were 15 observations read from the data set WORK.COMBINE.
+NOTE: The PROCEDURE FREQ printed page 3.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.04 seconds
+      user cpu time       0.04 seconds
+      system cpu time     0.00 seconds
+      memory              1885.65k
+      OS Memory           34740.00k
+      Timestamp           05/14/2016 12:41:39 AM
+      Step Count                        14  Switch Count  134
+      Page Faults                       0
+      Page Reclaims                     298
+      Page Swaps                        0
+      Voluntary Context Switches        516
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           632
+      
+
+11                                                         The SAS System                               00:41 Saturday, May 14, 2016
+
+289        
+290        /*
+291        17 – Using your data set from Item 15 and one PROC UNIVARIATE to do the following:
+292        Generate summary statistics for Height stratified by Median Weight Category.
+293        Identify the extreme values using the Site-Patient identifier variable.
+294        */
+295        proc sort data= combine;
+296          by wt_cat;
+297        run;
+
+NOTE: There were 15 observations read from the data set WORK.COMBINE.
+NOTE: The data set WORK.COMBINE has 15 observations and 23 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      user cpu time       0.00 seconds
+      system cpu time     0.00 seconds
+      memory              781.93k
+      OS Memory           34480.00k
+      Timestamp           05/14/2016 12:41:39 AM
+      Step Count                        15  Switch Count  31
+      Page Faults                       0
+      Page Reclaims                     83
+      Page Swaps                        0
+      Voluntary Context Switches        78
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           264
+      
+
+298        
+299        proc univariate data= combine;
+300          var height;
+301          by wt_cat;
+302          id pt_id;
+303        run;
+
+NOTE: The PROCEDURE UNIVARIATE printed pages 4-7.
+NOTE: PROCEDURE UNIVARIATE used (Total process time):
+      real time           0.10 seconds
+      user cpu time       0.11 seconds
+      system cpu time     0.00 seconds
+      memory              1206.21k
+      OS Memory           34476.00k
+      Timestamp           05/14/2016 12:41:39 AM
+      Step Count                        16  Switch Count  328
+      Page Faults                       0
+      Page Reclaims                     247
+      Page Swaps                        0
+      Voluntary Context Switches        1375
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           120
+      
+
+304        
+305        
+306        GOPTIONS NOACCESSIBLE;
+307        %LET _CLIENTTASKLABEL=;
+12                                                         The SAS System                               00:41 Saturday, May 14, 2016
+
+308        %LET _CLIENTPROJECTPATH=;
+309        %LET _CLIENTPROJECTNAME=;
+310        %LET _SASPROGRAMFILE=;
+311        
+312        ;*';*";*/;quit;run;
+313        ODS _ALL_ CLOSE;
+NOTE: ODS PDF(EGPDF) printed 7 pages to /saswork/SAS_work054E0000DD96_odaws03-prod-us/#LN00011.
+314        
+315        
+316        QUIT; RUN;
+317        
