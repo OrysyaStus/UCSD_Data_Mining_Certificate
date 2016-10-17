@@ -1,0 +1,5 @@
+VisitorID,Previously_Visited,SessionLength,PageViews
+26,No,Short,Low
+27,Yes,Short,Medium
+28,Yes,Average,Medium
+29,Yes,Long,High
