@@ -1,0 +1,6 @@
+Problem Definition:
+Talking to the client, we find out:
+-the company needed a model of the diff. cars' consumption = MiPerGal
+
+Steps:
+-prepare the data WRT the problem definition

@@ -1,0 +1,411 @@
+@relation 'CARS1-weka.filters.unsupervised.attribute.Reorder-R1,2,3,4,5,6,7,8,10,9-weka.filters.unsupervised.attribute.MergeTwoValues-C9-F1-S2-weka.filters.unsupervised.attribute.MergeTwoValues-C7-F1-S2-weka.filters.unsupervised.attribute.MergeTwoValues-C7-F27-S29-weka.filters.unsupervised.instance.RemoveWithValues-S0.0-C7-L15,26-H'
+
+@attribute Cyl numeric
+@attribute CuPerIn numeric
+@attribute Hpwr numeric
+@attribute Wt_Lbs numeric
+@attribute Acc_0-60 numeric
+@attribute Year numeric
+@attribute Brand {chevrolet_chevy,buick,plymouth,amc,ford,pontiac,dodge,toyota,datsun,vw,peugeot,audi,saab,bmw,mercury,opel,fiat,oldsmobile,chrysler,mazda,volvo,renault,honda,subaru,m-benz_mercedes,cadillac,triumph,nissan}
+@attribute Model {'chevrolet_chevelle malibu','buick_skylark 320',plymouth_satellite,'amc_rebel sst',ford_torino,'ford_galaxie 500',chevrolet_impala,'plymouth_fury iii',pontiac_catalina,'amc_ambassador dpl','dodge_challenger se',plymouth_,'chevrolet_monte carlo','buick_estate wagon (sw)','toyota_corona mark ii',plymouth_duster,amc_hornet,ford_maverick,datsun_pl510,'vw_1131 deluxe sedan',peugeot_504,'audi_100 ls',saab_99e,bmw_2002,amc_gremlin,ford_f250,chevrolet_c20,dodge_d200,hi_1200d,'chevrolet_vega 2300',toyota_corona,'plymouth_satellite custom','ford_torino 500',amc_matador,'pontiac_catalina brougham','dodge_monaco (sw)','ford_country squire (sw)','pontiac_safari (sw)','amc_hornet sportabout (sw)','chevrolet_vega (sw)',pontiac_firebird,ford_mustang,'mercury_capri 2000',opel_1900,peugeot_304,fiat_124b,'toyota_corolla 1200',datsun_1200,'vw_model 111',plymouth_cricket,'toyota_corona hardtop','dodge_colt hardtop','vw_type 3',chevrolet_vega,'ford_pinto runabout','amc_ambassador sst',mercury_marquis,'buick_lesabre custom','oldsmobile_delta 88 royale','chrysler_newport royal','mazda_rx2 coupe','amc_matador (sw)','chevrolet_chevelle concours (sw)','ford_gran torino (sw)','plymouth_satellite custom (sw)','volvo_145e (sw)','vw_411 (sw)','peugeot_504 (sw)','renault_12 (sw)','ford_pinto (sw)','datsun_510 (sw)','toyota_corona mark ii (sw)','dodge_colt (sw)','toyota_corolla 1600 (sw)','buick_century 350',chevrolet_malibu,'ford_gran torino','dodge_coronet custom','mercury_marquis brougham','chevrolet_caprice classic',ford_ltd,'plymouth_fury gran sedan','chrysler_new yorker brougham','buick_electra 225 custom','amc_ambassador brougham',plymouth_valiant,'chevrolet_nova custom','vw_super beetle',ford_country,'plymouth_custom suburb','oldsmobile_vista cruiser',toyota_carina,datsun_610,mazda_rx3,ford_pinto,'mercury_capri v6','fiat_124 sport coupe','chevrolet_monte carlo s','pontiac_grand prix',fiat_128,opel_manta,audi_100ls,volvo_144ea,'dodge_dart custom',saab_99le,'toyota_mark ii',oldsmobile_omega,chevrolet_nova,datsun_b210,'chevrolet_chevelle malibu classic','plymouth_satellite sebring','buick_century luxus (sw)','dodge_coronet custom (sw)',audi_fox,vw_dasher,datsun_710,dodge_colt,'fiat_124 tc',honda_civic,subaru_n/a,fiat_x1.9,'plymouth_valiant custom',mercury_monarch,'chevrolet_bel air','plymouth_grand fury',buick_century,plymouth_fury,buick_skyhawk,'chevrolet_monza 2+2','ford_mustang ii',toyota_corolla,pontiac_astro,vw_rabbit,amc_pacer,volvo_244dl,'honda_civic cvcc',fiat_131,capri_ii,renault_12tl,'dodge_coronet brougham',chevrolet_chevette,chevrolet_woody,'dodge_aspen se','ford_granada ghia','pontiac_ventura sj','amc_pacer d/l',datsun_b-210,volvo_245,'plymouth_volare premier v8',mercedes_280s,cadillac_seville,chevrolet_c10,ford_f108,dodge_d100,'honda_accord cvcc','buick_opel isuzu deluxe','renault_5 gtl','plymouth_arrow gs','datsun_f-10 hatchback','oldsmobile_cutlass supreme','dodge_monaco brougham','mercury_cougar brougham',chevrolet_concours,buick_skylark,'plymouth_volare custom',ford_granada,'pontiac_grand prix lj','chevrolet_monte carlo landau',chrysler_cordoba,ford_thunderbird,'vw_rabbit custom','pontiac_sunbird coupe','toyota_corolla liftback','ford_mustang ii 2+2','dodge_colt m/m',subaru_dl,datsun_810,bmw_320i,mazda_rx-4,'vw_rabbit custom diesel',ford_fiesta,'mazda_glc deluxe','datsun_b210 gx','oldsmobile_cutlass salon brougham',dodge_diplomat,'mercury_monarch ghia','pontiac_phoenix lj','ford_fairmont (auto)','ford_fairmont (man)',plymouth_volare,amc_concord,'buick_century special',mercury_zephyr,dodge_aspen,'amc_concord d/l','buick_regal sport coupe (turbo)',ford_futura,'dodge_magnum xe',datsun_510,dodge_omni,'toyota_celica gt liftback',plymouth_sapporo,'oldsmobile_starfire sx',datsun_200-sx,audi_5000,volvo_264gl,saab_99gle,peugeot_604sl,vw_scirocco,'honda_accord lx','pontiac_lemans v6','mercury_zephyr 6','ford_fairmont 4','amc_concord dl 6','dodge_aspen 6','ford_ltd landau','mercury_grand marquis','dodge_st. regis','chevrolet_malibu classic (sw)','chrysler_lebaron town & country (sw)','dodge_colt hatchback custom','amc_spirit dl','mercedes_benz 300d',cadillac_eldorado,plymouth_horizon,'plymouth_horizon tc3',datsun_210,'fiat_strada custom','buick_skylark limited',chevrolet_citation,'oldsmobile_omega brougham',pontiac_phoenix,'toyota_corolla tercel',datsun_310,ford_fairmont,audi_4000,'toyota_corona liftback',mazda_626,'datsun_510 hatchback',mazda_glc,'vw_rabbit c (diesel)','vw_dasher (diesel)','audi_5000s (diesel)',mercedes_240d,'honda_civic 1500 gl',datsun_280-zx,'mazda_rx-7 gs','triumph_tr7 coupe',honda_accord,plymouth_reliant,'dodge_aries wagon (sw)',toyota_starlet,plymouth_champ,'honda_civic 1300','datsun_210 mpg',toyota_tercel,'mazda_glc 4','plymouth_horizon 4','ford_escort 4w','ford_escort 2h',vw_jetta,honda_prelude,datsun_200sx,'peugeot_505s turbo diesel',volvo_diesel,toyota_cressida,'datsun_810 maxima','oldsmobile_cutlass ls','ford_granada gl','chrysler_lebaron salon',chevrolet_cavalier,'chevrolet_cavalier wagon','chevrolet_cavalier 2-door','pontiac_j2000 se hatchback','dodge_aries se','ford_fairmont futura','vw_rabbit l','mazda_glc custom l','mazda_glc custom','plymouth_horizon miser','mercury_lynx l','nissan_stanza xe','honda_civic (auto)','datsun_310 gx','buick_century limited','oldsmobile_cutlass ciera (diesel)','chrysler_lebaron medallion','ford_granada l','toyota_celica gt','dodge_charger 2.2',chevrolet_camaro,'ford_mustang gl',vw_pickup,dodge_rampage,ford_ranger,chevrolet_s-10}
+@attribute Origin {US_USA,Japan,Europe}
+@attribute MiPerGal numeric
+
+@data
+8,307,130,3504,12,1971,chevrolet_chevy,'chevrolet_chevelle malibu',US_USA,18
+?,307,130,3504,12,1971,chevrolet_chevy,'chevrolet_chevelle malibu',US_USA,18
+8,?,130,3504,12,1971,chevrolet_chevy,'chevrolet_chevelle malibu',US_USA,18
+8,307,?,3504,12,1971,chevrolet_chevy,'chevrolet_chevelle malibu',US_USA,18
+8,307,130,?,12,1971,chevrolet_chevy,'chevrolet_chevelle malibu',US_USA,18
+8,307,130,3504,?,1971,chevrolet_chevy,'chevrolet_chevelle malibu',US_USA,18
+8,307,130,3504,12,?,chevrolet_chevy,'chevrolet_chevelle malibu',US_USA,18
+8,350,165,3693,12,1971,buick,'buick_skylark 320',US_USA,15
+?,350,165,3693,12,1971,buick,'buick_skylark 320',US_USA,15
+8,?,165,3693,12,1971,buick,'buick_skylark 320',US_USA,15
+8,350,?,3693,12,1971,buick,'buick_skylark 320',US_USA,15
+8,350,165,?,12,1971,buick,'buick_skylark 320',US_USA,15
+8,350,165,3693,?,1971,buick,'buick_skylark 320',US_USA,15
+8,350,165,3693,12,?,buick,'buick_skylark 320',US_USA,15
+8,318,150,3436,11,1971,plymouth,plymouth_satellite,US_USA,18
+8,304,150,3433,12,1971,amc,'amc_rebel sst',US_USA,16
+8,302,140,3449,11,1971,ford,ford_torino,US_USA,17
+8,429,198,4341,10,1971,ford,'ford_galaxie 500',US_USA,15
+8,454,220,4354,9,1971,chevrolet_chevy,chevrolet_impala,US_USA,14
+8,440,215,4312,9,1971,plymouth,'plymouth_fury iii',US_USA,14
+8,455,225,4425,10,1971,pontiac,pontiac_catalina,US_USA,14
+8,390,190,3850,9,1971,amc,'amc_ambassador dpl',US_USA,15
+8,383,170,3563,10,1971,dodge,'dodge_challenger se',US_USA,15
+8,400,150,3761,10,1971,chevrolet_chevy,'chevrolet_monte carlo',US_USA,15
+8,455,225,3086,10,1971,buick,'buick_estate wagon (sw)',US_USA,14
+4,113,95,2372,15,1971,toyota,'toyota_corona mark ii',Japan,24
+6,198,95,2833,16,1971,plymouth,plymouth_duster,US_USA,22
+6,199,97,2774,16,1971,amc,amc_hornet,US_USA,18
+6,200,85,2587,16,1971,ford,ford_maverick,US_USA,21
+4,97,88,2130,15,1971,datsun,datsun_pl510,Japan,27
+4,97,46,1835,21,1971,vw,'vw_1131 deluxe sedan',Europe,26
+4,110,87,2672,18,1971,peugeot,peugeot_504,Europe,25
+4,107,90,2430,15,1971,audi,'audi_100 ls',Europe,24
+4,104,95,2375,18,1971,saab,saab_99e,Europe,25
+4,121,113,2234,13,1971,bmw,bmw_2002,Europe,26
+6,199,90,2648,15,1971,amc,amc_gremlin,US_USA,21
+8,360,215,4615,14,1971,ford,ford_f250,US_USA,10
+8,307,200,4376,15,1971,chevrolet_chevy,chevrolet_c20,US_USA,10
+8,318,210,4382,14,1971,dodge,dodge_d200,US_USA,11
+4,97,88,2130,15,1972,datsun,datsun_pl510,Japan,27
+4,140,90,2264,16,1972,chevrolet_chevy,'chevrolet_vega 2300',US_USA,28
+4,113,95,2228,14,1972,toyota,toyota_corona,Japan,25
+6,232,100,2634,13,1972,amc,amc_gremlin,US_USA,19
+6,225,105,3439,16,1972,plymouth,'plymouth_satellite custom',US_USA,16
+6,250,100,3329,16,1972,chevrolet_chevy,'chevrolet_chevelle malibu',US_USA,17
+6,250,88,3302,16,1972,ford,'ford_torino 500',US_USA,19
+6,232,100,3288,16,1972,amc,amc_matador,US_USA,18
+8,350,165,4209,12,1972,chevrolet_chevy,chevrolet_impala,US_USA,14
+8,400,175,4464,12,1972,pontiac,'pontiac_catalina brougham',US_USA,14
+8,351,153,4154,14,1972,ford,'ford_galaxie 500',US_USA,14
+8,318,150,4096,13,1972,plymouth,'plymouth_fury iii',US_USA,14
+8,383,180,4955,12,1972,dodge,'dodge_monaco (sw)',US_USA,12
+8,400,170,4746,12,1972,ford,'ford_country squire (sw)',US_USA,13
+8,400,175,5140,12,1972,pontiac,'pontiac_safari (sw)',US_USA,13
+6,258,110,2962,14,1972,amc,'amc_hornet sportabout (sw)',US_USA,18
+4,140,72,2408,19,1972,chevrolet_chevy,'chevrolet_vega (sw)',US_USA,22
+6,250,100,3282,15,1972,pontiac,pontiac_firebird,US_USA,19
+6,250,88,3139,15,1972,ford,ford_mustang,US_USA,18
+4,122,86,2220,14,1972,mercury,'mercury_capri 2000',US_USA,23
+4,116,90,2123,14,1972,opel,opel_1900,Europe,28
+4,79,70,2074,20,1972,peugeot,peugeot_304,Europe,30
+4,88,76,2065,15,1972,fiat,fiat_124b,Europe,30
+4,71,65,1773,19,1972,toyota,'toyota_corolla 1200',Japan,31
+4,72,69,1613,18,1972,datsun,datsun_1200,Japan,35
+4,97,60,1834,19,1972,vw,'vw_model 111',Europe,27
+4,91,70,1955,21,1972,plymouth,plymouth_cricket,US_USA,26
+4,113,95,2278,16,1973,toyota,'toyota_corona hardtop',Japan,24
+4,98,80,2126,17,1973,dodge,'dodge_colt hardtop',US_USA,25
+4,97,54,2254,24,1973,vw,'vw_type 3',Europe,23
+4,140,90,2408,20,1973,chevrolet_chevy,chevrolet_vega,US_USA,20
+4,122,86,2226,17,1973,ford,'ford_pinto runabout',US_USA,21
+8,350,165,4274,12,1973,chevrolet_chevy,chevrolet_impala,US_USA,13
+8,400,175,4385,12,1973,pontiac,pontiac_catalina,US_USA,14
+8,318,150,4135,14,1973,plymouth,'plymouth_fury iii',US_USA,15
+8,351,153,4129,13,1973,ford,'ford_galaxie 500',US_USA,14
+8,304,150,3672,12,1973,amc,'amc_ambassador sst',US_USA,17
+8,429,208,4633,11,1973,mercury,mercury_marquis,US_USA,11
+8,350,155,4502,14,1973,buick,'buick_lesabre custom',US_USA,13
+8,350,160,4456,14,1973,oldsmobile,'oldsmobile_delta 88 royale',US_USA,12
+8,400,190,4422,13,1973,chrysler,'chrysler_newport royal',US_USA,13
+8,304,150,3892,13,1973,amc,'amc_matador (sw)',US_USA,15
+8,307,130,4098,14,1973,chevrolet_chevy,'chevrolet_chevelle concours (sw)',US_USA,13
+8,302,140,4294,16,1973,ford,'ford_gran torino (sw)',US_USA,13
+8,318,150,4077,14,1973,plymouth,'plymouth_satellite custom (sw)',US_USA,14
+4,121,112,2933,15,1973,volvo,'volvo_145e (sw)',Europe,18
+4,121,76,2511,18,1973,vw,'vw_411 (sw)',Europe,22
+4,120,87,2979,20,1973,peugeot,'peugeot_504 (sw)',Europe,21
+4,96,69,2189,18,1973,renault,'renault_12 (sw)',Europe,26
+4,122,86,2395,16,1973,ford,'ford_pinto (sw)',US_USA,22
+4,97,92,2288,17,1973,datsun,'datsun_510 (sw)',Japan,28
+4,120,97,2506,15,1973,toyota,'toyota_corona mark ii (sw)',Japan,23
+4,98,80,2164,15,1973,dodge,'dodge_colt (sw)',US_USA,28
+4,97,88,2100,17,1973,toyota,'toyota_corolla 1600 (sw)',Japan,27
+8,350,175,4100,13,1974,buick,'buick_century 350',US_USA,13
+8,304,150,3672,12,1974,amc,amc_matador,US_USA,14
+8,350,145,3988,13,1974,chevrolet_chevy,chevrolet_malibu,US_USA,13
+8,302,137,4042,15,1974,ford,'ford_gran torino',US_USA,14
+8,318,150,3777,13,1974,dodge,'dodge_coronet custom',US_USA,15
+8,429,198,4952,12,1974,mercury,'mercury_marquis brougham',US_USA,12
+8,400,150,4464,12,1974,chevrolet_chevy,'chevrolet_caprice classic',US_USA,13
+8,351,158,4363,13,1974,ford,ford_ltd,US_USA,13
+8,318,150,4237,15,1974,plymouth,'plymouth_fury gran sedan',US_USA,14
+8,440,215,4735,11,1974,chrysler,'chrysler_new yorker brougham',US_USA,13
+8,455,225,4951,11,1974,buick,'buick_electra 225 custom',US_USA,12
+8,360,175,3821,11,1974,amc,'amc_ambassador brougham',US_USA,13
+6,225,105,3121,17,1974,plymouth,plymouth_valiant,US_USA,18
+6,250,100,3278,18,1974,chevrolet_chevy,'chevrolet_nova custom',US_USA,16
+6,232,100,2945,16,1974,amc,amc_hornet,US_USA,18
+6,250,88,3021,17,1974,ford,ford_maverick,US_USA,18
+6,198,95,2904,16,1974,plymouth,plymouth_duster,US_USA,23
+4,97,46,1950,21,1974,vw,'vw_super beetle',Europe,26
+8,400,150,4997,14,1974,chevrolet_chevy,chevrolet_impala,US_USA,11
+8,400,167,4906,13,1974,ford,ford_country,US_USA,12
+8,360,170,4654,13,1974,plymouth,'plymouth_custom suburb',US_USA,13
+8,350,180,4499,13,1974,oldsmobile,'oldsmobile_vista cruiser',US_USA,12
+6,232,100,2789,15,1974,amc,amc_gremlin,US_USA,18
+4,97,88,2279,19,1974,toyota,toyota_carina,Japan,20
+4,140,72,2401,20,1974,chevrolet_chevy,chevrolet_vega,US_USA,21
+4,108,94,2379,17,1974,datsun,datsun_610,Japan,22
+4,122,85,2310,19,1974,ford,ford_pinto,US_USA,19
+6,155,107,2472,14,1974,mercury,'mercury_capri v6',US_USA,21
+4,98,90,2265,16,1974,fiat,'fiat_124 sport coupe',Europe,26
+8,350,145,4082,13,1974,chevrolet_chevy,'chevrolet_monte carlo s',US_USA,15
+8,400,230,4278,10,1974,pontiac,'pontiac_grand prix',US_USA,16
+4,68,49,1867,20,1974,fiat,fiat_128,Europe,29
+4,116,75,2158,16,1974,opel,opel_manta,Europe,24
+4,114,91,2582,14,1974,audi,audi_100ls,Europe,20
+4,121,112,2868,16,1974,volvo,volvo_144ea,Europe,19
+8,318,150,3399,11,1974,dodge,'dodge_dart custom',US_USA,15
+4,121,110,2660,14,1974,saab,saab_99le,Europe,24
+6,156,122,2807,14,1974,toyota,'toyota_mark ii',Japan,20
+8,350,180,3664,11,1974,oldsmobile,oldsmobile_omega,US_USA,11
+6,198,95,3102,17,1975,plymouth,plymouth_duster,US_USA,20
+6,232,100,2901,16,1975,amc,amc_hornet,US_USA,19
+6,250,100,3336,17,1975,chevrolet_chevy,chevrolet_nova,US_USA,15
+4,79,67,1950,19,1975,datsun,datsun_b210,Japan,31
+4,122,80,2451,17,1975,ford,ford_pinto,US_USA,26
+4,71,65,1836,21,1975,toyota,'toyota_corolla 1200',Japan,32
+4,140,75,2542,17,1975,chevrolet_chevy,chevrolet_vega,US_USA,25
+6,250,100,3781,17,1975,chevrolet_chevy,'chevrolet_chevelle malibu classic',US_USA,16
+6,258,110,3632,18,1975,amc,amc_matador,US_USA,16
+6,225,105,3613,17,1975,plymouth,'plymouth_satellite sebring',US_USA,18
+8,302,140,4141,14,1975,ford,'ford_gran torino',US_USA,16
+8,350,150,4699,15,1975,buick,'buick_century luxus (sw)',US_USA,13
+8,318,150,4457,14,1975,dodge,'dodge_coronet custom (sw)',US_USA,14
+8,302,140,4638,16,1975,ford,'ford_gran torino (sw)',US_USA,14
+8,304,150,4257,16,1975,amc,'amc_matador (sw)',US_USA,14
+4,98,83,2219,17,1975,audi,audi_fox,Europe,29
+4,79,67,1963,16,1975,vw,vw_dasher,Europe,26
+4,97,78,2300,15,1975,opel,opel_manta,Europe,26
+4,76,52,1649,17,1975,toyota,toyota_corona,Japan,31
+4,83,61,2003,19,1975,datsun,datsun_710,Japan,32
+4,90,75,2125,15,1975,dodge,dodge_colt,US_USA,28
+4,90,75,2108,16,1975,fiat,fiat_128,Europe,24
+4,116,75,2246,14,1975,fiat,'fiat_124 tc',Europe,26
+4,120,97,2489,15,1975,honda,honda_civic,Japan,24
+4,108,93,2391,16,1975,subaru,subaru_n/a,Japan,26
+4,79,67,2000,16,1975,fiat,fiat_x1.9,Europe,31
+6,225,95,3264,16,1976,plymouth,'plymouth_valiant custom',US_USA,19
+6,250,105,3459,16,1976,chevrolet_chevy,chevrolet_nova,US_USA,18
+6,250,72,3432,21,1976,mercury,mercury_monarch,US_USA,15
+6,250,72,3158,20,1976,ford,ford_maverick,US_USA,15
+8,400,170,4668,12,1976,pontiac,pontiac_catalina,US_USA,16
+8,350,145,4440,14,1976,chevrolet_chevy,'chevrolet_bel air',US_USA,15
+8,318,150,4498,15,1976,plymouth,'plymouth_grand fury',US_USA,16
+8,351,148,4657,14,1976,ford,ford_ltd,US_USA,14
+6,231,110,3907,21,1976,buick,buick_century,US_USA,17
+6,250,105,3897,19,1976,chevrolet_chevy,'chevrolet_chevelle malibu',US_USA,16
+6,258,110,3730,19,1976,amc,amc_matador,US_USA,15
+6,225,95,3785,19,1976,plymouth,plymouth_fury,US_USA,18
+6,231,110,3039,15,1976,buick,buick_skyhawk,US_USA,21
+8,262,110,3221,14,1976,chevrolet_chevy,'chevrolet_monza 2+2',US_USA,20
+8,302,129,3169,12,1976,ford,'ford_mustang ii',US_USA,13
+4,97,75,2171,16,1976,toyota,toyota_corolla,Japan,29
+4,140,83,2639,17,1976,ford,ford_pinto,US_USA,23
+6,232,100,2914,16,1976,amc,amc_gremlin,US_USA,20
+4,140,78,2592,19,1976,pontiac,pontiac_astro,US_USA,23
+4,134,96,2702,14,1976,toyota,toyota_corona,Japan,24
+4,90,71,2223,17,1976,vw,vw_dasher,Europe,25
+4,119,97,2545,17,1976,datsun,datsun_710,Japan,24
+6,171,97,2984,15,1976,ford,ford_pinto,US_USA,18
+4,90,70,1937,14,1976,vw,vw_rabbit,Europe,29
+6,232,90,3211,17,1976,amc,amc_pacer,US_USA,19
+4,115,95,2694,15,1976,audi,audi_100ls,Europe,23
+4,120,88,2957,17,1976,peugeot,peugeot_504,Europe,23
+4,121,98,2945,15,1976,volvo,volvo_244dl,Europe,22
+4,121,115,2671,14,1976,saab,saab_99le,Europe,25
+4,91,53,1795,18,1976,honda,'honda_civic cvcc',Japan,33
+4,107,86,2464,16,1977,fiat,fiat_131,Europe,28
+4,116,81,2220,17,1977,opel,opel_1900,Europe,25
+4,98,79,2255,18,1977,dodge,dodge_colt,US_USA,26
+4,101,83,2202,15,1977,renault,renault_12tl,Europe,27
+8,305,140,4215,13,1977,chevrolet_chevy,'chevrolet_chevelle malibu classic',US_USA,17.5
+8,318,150,4190,13,1977,dodge,'dodge_coronet brougham',US_USA,16
+8,304,120,3962,14,1977,amc,amc_matador,US_USA,15.5
+8,351,152,4215,13,1977,ford,'ford_gran torino',US_USA,14.5
+6,225,100,3233,15,1977,plymouth,plymouth_valiant,US_USA,22
+6,250,105,3353,15,1977,chevrolet_chevy,chevrolet_nova,US_USA,22
+6,200,81,3012,18,1977,ford,ford_maverick,US_USA,24
+6,232,90,3085,18,1977,amc,amc_hornet,US_USA,22.5
+4,85,52,2035,22,1977,chevrolet_chevy,chevrolet_chevette,US_USA,29
+4,98,60,2164,22,1977,chevrolet_chevy,chevrolet_woody,US_USA,24.5
+4,90,70,1937,14,1977,vw,vw_rabbit,Europe,29
+4,91,53,1795,17,1977,honda,honda_civic,Japan,33
+6,225,100,3651,18,1977,dodge,'dodge_aspen se',US_USA,20
+6,250,78,3574,21,1977,ford,'ford_granada ghia',US_USA,18
+6,250,110,3645,16,1977,pontiac,'pontiac_ventura sj',US_USA,18.5
+6,258,95,3193,18,1977,amc,'amc_pacer d/l',US_USA,17.5
+4,97,71,1825,12,1977,vw,vw_rabbit,Europe,29.5
+4,85,70,1990,17,1977,datsun,datsun_b-210,Japan,32
+4,97,75,2155,16,1977,toyota,toyota_corolla,Japan,28
+4,140,72,2565,14,1977,ford,ford_pinto,US_USA,26.5
+4,130,102,3150,16,1977,volvo,volvo_245,Europe,20
+8,318,150,3940,13,1977,plymouth,'plymouth_volare premier v8',US_USA,13
+4,120,88,3270,22,1977,peugeot,peugeot_504,Europe,19
+6,156,108,2930,16,1977,toyota,'toyota_mark ii',Japan,19
+6,168,120,3820,17,1977,m-benz_mercedes,mercedes_280s,Europe,16.5
+8,350,180,4380,12,1977,cadillac,cadillac_seville,US_USA,16.5
+8,350,145,4055,12,1977,chevrolet_chevy,chevrolet_c10,US_USA,13
+8,302,130,3870,15,1977,ford,ford_f108,US_USA,13
+8,318,150,3755,14,1977,dodge,dodge_d100,US_USA,13
+4,98,68,2045,19,1978,honda,'honda_accord cvcc',Japan,31.5
+4,111,80,2155,15,1978,buick,'buick_opel isuzu deluxe',US_USA,30
+4,79,58,1825,19,1978,renault,'renault_5 gtl',Europe,36
+4,122,96,2300,16,1978,plymouth,'plymouth_arrow gs',US_USA,25.5
+4,85,70,1945,17,1978,datsun,'datsun_f-10 hatchback',Japan,33.5
+8,305,145,3880,13,1978,chevrolet_chevy,'chevrolet_caprice classic',US_USA,17.5
+8,260,110,4060,19,1978,oldsmobile,'oldsmobile_cutlass supreme',US_USA,17
+8,318,145,4140,14,1978,dodge,'dodge_monaco brougham',US_USA,15.5
+8,302,130,4295,15,1978,mercury,'mercury_cougar brougham',US_USA,15
+6,250,110,3520,16,1978,chevrolet_chevy,chevrolet_concours,US_USA,17.5
+6,231,105,3425,17,1978,buick,buick_skylark,US_USA,20.5
+6,225,100,3630,18,1978,plymouth,'plymouth_volare custom',US_USA,19
+6,250,98,3525,19,1978,ford,ford_granada,US_USA,18.5
+8,400,180,4220,11,1978,pontiac,'pontiac_grand prix lj',US_USA,16
+8,350,170,4165,11,1978,chevrolet_chevy,'chevrolet_monte carlo landau',US_USA,15.5
+8,400,190,4325,12,1978,chrysler,chrysler_cordoba,US_USA,15.5
+8,351,149,4335,15,1978,ford,ford_thunderbird,US_USA,16
+4,97,78,1940,15,1978,vw,'vw_rabbit custom',Europe,29
+4,151,88,2740,16,1978,pontiac,'pontiac_sunbird coupe',US_USA,24.5
+4,97,75,2265,18,1978,toyota,'toyota_corolla liftback',Japan,26
+4,140,89,2755,16,1978,ford,'ford_mustang ii 2+2',US_USA,25.5
+4,98,63,2051,17,1978,chevrolet_chevy,chevrolet_chevette,US_USA,30.5
+4,98,83,2075,16,1978,dodge,'dodge_colt m/m',US_USA,33.5
+4,97,67,1985,16,1978,subaru,subaru_dl,Japan,30
+4,97,78,2190,14,1978,vw,vw_dasher,Europe,30.5
+6,146,97,2815,15,1978,datsun,datsun_810,Japan,22
+4,121,110,2600,13,1978,bmw,bmw_320i,Europe,21.5
+4,90,48,1985,22,1979,vw,'vw_rabbit custom diesel',Europe,43.1
+4,98,66,1800,14,1979,ford,ford_fiesta,US_USA,36.1
+4,78,52,1985,19,1979,mazda,'mazda_glc deluxe',Japan,32.8
+4,85,70,2070,19,1979,datsun,'datsun_b210 gx',Japan,39.4
+4,91,60,1800,16,1979,honda,'honda_civic cvcc',Japan,36.1
+8,260,110,3365,16,1979,oldsmobile,'oldsmobile_cutlass salon brougham',US_USA,19.9
+8,318,140,3735,13,1979,dodge,dodge_diplomat,US_USA,19.4
+8,302,139,3570,13,1979,mercury,'mercury_monarch ghia',US_USA,20.2
+6,231,105,3535,19,1979,pontiac,'pontiac_phoenix lj',US_USA,19.2
+6,200,95,3155,18,1979,chevrolet_chevy,chevrolet_malibu,US_USA,20.5
+6,200,85,2965,16,1979,ford,'ford_fairmont (auto)',US_USA,20.2
+4,140,88,2720,15,1979,ford,'ford_fairmont (man)',US_USA,25.1
+6,225,100,3430,17,1979,plymouth,plymouth_volare,US_USA,20.5
+6,232,90,3210,17,1979,amc,amc_concord,US_USA,19.4
+6,231,105,3380,16,1979,buick,'buick_century special',US_USA,20.6
+6,200,85,3070,17,1979,mercury,mercury_zephyr,US_USA,20.8
+6,225,110,3620,19,1979,dodge,dodge_aspen,US_USA,18.6
+6,258,120,3410,15,1979,amc,'amc_concord d/l',US_USA,18.1
+8,305,145,3425,13,1979,chevrolet_chevy,'chevrolet_monte carlo landau',US_USA,19.2
+6,231,165,3445,13,1979,buick,'buick_regal sport coupe (turbo)',US_USA,17.7
+8,302,139,3205,11,1979,ford,ford_futura,US_USA,18.1
+8,318,140,4080,14,1979,dodge,'dodge_magnum xe',US_USA,17.5
+4,98,68,2155,17,1979,chevrolet_chevy,chevrolet_chevette,US_USA,30
+4,134,95,2560,14,1979,toyota,toyota_corona,Japan,27.5
+4,119,97,2300,15,1979,datsun,datsun_510,Japan,27.2
+4,105,75,2230,15,1979,dodge,dodge_omni,US_USA,30.9
+4,134,95,2515,15,1979,toyota,'toyota_celica gt liftback',Japan,21.1
+4,156,105,2745,17,1979,plymouth,plymouth_sapporo,US_USA,23.2
+4,151,85,2855,18,1979,oldsmobile,'oldsmobile_starfire sx',US_USA,23.8
+4,119,97,2405,15,1979,datsun,datsun_200-sx,Japan,23.9
+5,131,103,2830,16,1979,audi,audi_5000,Europe,20.3
+6,163,125,3140,14,1979,volvo,volvo_264gl,Europe,17
+4,121,115,2795,16,1979,saab,saab_99gle,Europe,21.6
+6,163,133,3410,16,1979,peugeot,peugeot_604sl,Europe,16.2
+4,89,71,1990,15,1979,vw,vw_scirocco,Europe,31.5
+4,98,68,2135,17,1979,honda,'honda_accord lx',Japan,29.5
+6,231,115,3245,15,1980,pontiac,'pontiac_lemans v6',US_USA,21.5
+6,200,85,2990,18,1980,mercury,'mercury_zephyr 6',US_USA,19.8
+4,140,88,2890,17,1980,ford,'ford_fairmont 4',US_USA,22.3
+6,232,90,3265,18,1980,amc,'amc_concord dl 6',US_USA,20.2
+6,225,110,3360,17,1980,dodge,'dodge_aspen 6',US_USA,20.6
+8,305,130,3840,15,1980,chevrolet_chevy,'chevrolet_caprice classic',US_USA,17
+8,302,129,3725,13,1980,ford,'ford_ltd landau',US_USA,17.6
+8,351,138,3955,13,1980,mercury,'mercury_grand marquis',US_USA,16.5
+8,318,135,3830,15,1980,dodge,'dodge_st. regis',US_USA,18.2
+8,350,155,4360,15,1980,buick,'buick_estate wagon (sw)',US_USA,16.9
+8,351,142,4054,14,1980,ford,'ford_country squire (sw)',US_USA,15.5
+8,267,125,3605,15,1980,chevrolet_chevy,'chevrolet_malibu classic (sw)',US_USA,19.2
+8,360,150,3940,13,1980,chrysler,'chrysler_lebaron town & country (sw)',US_USA,18.5
+4,89,71,1925,14,1980,vw,'vw_rabbit custom',Europe,31.9
+4,86,65,1975,15,1980,mazda,'mazda_glc deluxe',Japan,34.1
+4,98,80,1915,14,1980,dodge,'dodge_colt hatchback custom',US_USA,35.7
+4,121,80,2670,15,1980,amc,'amc_spirit dl',US_USA,27.4
+5,183,77,3530,20,1980,m-benz_mercedes,'mercedes_benz 300d',Europe,25.4
+8,350,125,3900,17,1980,cadillac,cadillac_eldorado,US_USA,23
+4,141,71,3190,25,1980,peugeot,peugeot_504,Europe,27.2
+8,260,90,3420,22,1980,oldsmobile,'oldsmobile_cutlass salon brougham',US_USA,23.9
+4,105,70,2200,13,1980,plymouth,plymouth_horizon,US_USA,34.2
+4,105,70,2150,15,1980,plymouth,'plymouth_horizon tc3',US_USA,34.5
+4,85,65,2020,19,1980,datsun,datsun_210,Japan,31.8
+4,91,69,2130,15,1980,fiat,'fiat_strada custom',Europe,37.3
+4,151,90,2670,16,1980,buick,'buick_skylark limited',US_USA,28.4
+6,173,115,2595,11,1980,chevrolet_chevy,chevrolet_citation,US_USA,28.8
+6,173,115,2700,13,1980,oldsmobile,'oldsmobile_omega brougham',US_USA,26.8
+4,151,90,2556,13,1980,pontiac,pontiac_phoenix,US_USA,33.5
+4,98,76,2144,15,1981,vw,vw_rabbit,Europe,41.5
+4,89,60,1968,19,1981,toyota,'toyota_corolla tercel',Japan,38.1
+4,98,70,2120,16,1981,chevrolet_chevy,chevrolet_chevette,US_USA,32.1
+4,86,65,2019,16,1981,datsun,datsun_310,Japan,37.2
+4,151,90,2678,17,1981,chevrolet_chevy,chevrolet_citation,US_USA,28
+4,140,88,2870,18,1981,ford,ford_fairmont,US_USA,26.4
+4,151,90,3003,20,1981,amc,amc_concord,US_USA,24.3
+6,225,90,3381,19,1981,dodge,dodge_aspen,US_USA,19.1
+4,97,78,2188,16,1981,audi,audi_4000,Europe,34.3
+4,134,90,2711,16,1981,toyota,'toyota_corona liftback',Japan,29.8
+4,120,75,2542,18,1981,mazda,mazda_626,Japan,31.3
+4,119,92,2434,15,1981,datsun,'datsun_510 hatchback',Japan,37
+4,108,75,2265,15,1981,toyota,toyota_corolla,Japan,32.2
+4,86,65,2110,18,1981,mazda,mazda_glc,Japan,46.6
+4,156,105,2800,14,1981,dodge,dodge_colt,US_USA,27.9
+4,85,65,2110,19,1981,datsun,datsun_210,Japan,40.8
+4,90,48,2085,22,1981,vw,'vw_rabbit c (diesel)',Europe,44.3
+4,90,48,2335,24,1981,vw,'vw_dasher (diesel)',Europe,43.4
+5,121,67,2950,20,1981,audi,'audi_5000s (diesel)',Europe,36.4
+4,146,67,3250,22,1981,m-benz_mercedes,mercedes_240d,Europe,30
+4,91,67,1850,14,1981,honda,'honda_civic 1500 gl',Japan,44.6
+4,97,67,2145,18,1981,subaru,subaru_dl,Japan,33.8
+4,89,62,1845,15,1981,vw,vw_rabbit,Europe,29.8
+6,168,132,2910,11,1981,datsun,datsun_280-zx,Japan,32.7
+4,122,88,2500,15,1981,triumph,'triumph_tr7 coupe',Europe,35
+4,107,72,2290,17,1981,honda,honda_accord,Japan,32.4
+4,135,84,2490,16,1982,plymouth,plymouth_reliant,US_USA,27.2
+4,151,84,2635,16,1982,buick,buick_skylark,US_USA,26.6
+4,156,92,2620,14,1982,dodge,'dodge_aries wagon (sw)',US_USA,25.8
+6,173,110,2725,13,1982,chevrolet_chevy,chevrolet_citation,US_USA,23.5
+4,135,84,2385,13,1982,plymouth,plymouth_reliant,US_USA,30
+4,79,58,1755,17,1982,toyota,toyota_starlet,Japan,39.1
+4,86,64,1875,16,1982,plymouth,plymouth_champ,US_USA,39
+4,81,60,1760,16,1982,honda,'honda_civic 1300',Japan,35.1
+4,97,67,2065,18,1982,subaru,subaru_n/a,Japan,32.3
+4,85,65,1975,19,1982,datsun,'datsun_210 mpg',Japan,37
+4,89,62,2050,17,1982,toyota,toyota_tercel,Japan,37.7
+4,91,68,1985,16,1982,mazda,'mazda_glc 4',Japan,34.1
+4,105,63,2215,15,1982,plymouth,'plymouth_horizon 4',US_USA,34.7
+4,98,65,2045,16,1982,ford,'ford_escort 4w',US_USA,34.4
+4,98,65,2380,21,1982,ford,'ford_escort 2h',US_USA,29.9
+4,105,74,2190,14,1982,vw,vw_jetta,Europe,33
+4,107,75,2210,14,1982,honda,honda_prelude,Japan,33.7
+4,108,75,2350,17,1982,toyota,toyota_corolla,Japan,32.4
+4,119,100,2615,15,1982,datsun,datsun_200sx,Japan,32.9
+4,120,74,2635,18,1982,mazda,mazda_626,Japan,31.6
+4,141,80,3230,20,1982,peugeot,'peugeot_505s turbo diesel',Europe,28.1
+6,145,76,3160,20,1982,volvo,volvo_diesel,Europe,30.7
+6,168,116,2900,13,1982,toyota,toyota_cressida,Japan,25.4
+6,146,120,2930,14,1982,datsun,'datsun_810 maxima',Japan,24.2
+6,231,110,3415,16,1982,buick,buick_century,US_USA,22.4
+8,350,105,3725,19,1982,oldsmobile,'oldsmobile_cutlass ls',US_USA,26.6
+6,200,88,3060,17,1982,ford,'ford_granada gl',US_USA,20.2
+6,225,85,3465,17,1982,chrysler,'chrysler_lebaron salon',US_USA,17.6
+4,112,88,2605,20,1983,chevrolet_chevy,chevrolet_cavalier,US_USA,28
+4,112,88,2640,19,1983,chevrolet_chevy,'chevrolet_cavalier wagon',US_USA,27
+4,112,88,2395,18,1983,chevrolet_chevy,'chevrolet_cavalier 2-door',US_USA,34
+4,112,85,2575,16,1983,pontiac,'pontiac_j2000 se hatchback',US_USA,31
+4,135,84,2525,16,1983,dodge,'dodge_aries se',US_USA,29
+4,151,90,2735,18,1983,pontiac,pontiac_phoenix,US_USA,27
+4,140,92,2865,16,1983,ford,'ford_fairmont futura',US_USA,24
+4,105,74,1980,15,1983,vw,'vw_rabbit l',Europe,36
+4,91,68,2025,18,1983,mazda,'mazda_glc custom l',Japan,37
+4,91,68,1970,18,1983,mazda,'mazda_glc custom',Japan,31
+4,105,63,2125,15,1983,plymouth,'plymouth_horizon miser',US_USA,38
+4,98,70,2125,17,1983,mercury,'mercury_lynx l',US_USA,36
+4,120,88,2160,15,1983,nissan,'nissan_stanza xe',Japan,36
+4,107,75,2205,15,1983,honda,honda_accord,Japan,36
+4,108,70,2245,17,1983,toyota,toyota_corolla,Japan,34
+4,91,67,1965,15,1983,honda,honda_civic,Japan,38
+4,91,67,1965,16,1983,honda,'honda_civic (auto)',Japan,32
+4,91,67,1995,16,1983,datsun,'datsun_310 gx',Japan,38
+6,181,110,2945,16,1983,buick,'buick_century limited',US_USA,25
+6,262,85,3015,17,1983,oldsmobile,'oldsmobile_cutlass ciera (diesel)',US_USA,38
+4,156,92,2585,15,1983,chrysler,'chrysler_lebaron medallion',US_USA,26
+6,232,112,2835,15,1983,ford,'ford_granada l',US_USA,22
+4,144,96,2665,14,1983,toyota,'toyota_celica gt',Japan,32
+4,135,84,2370,13,1983,dodge,'dodge_charger 2.2',US_USA,36
+4,151,90,2950,17,1983,chevrolet_chevy,chevrolet_camaro,US_USA,27
+4,140,86,2790,16,1983,ford,'ford_mustang gl',US_USA,27
+4,97,52,2130,25,1983,vw,vw_pickup,Europe,44
+4,135,84,2295,12,1983,dodge,dodge_rampage,US_USA,32
+4,120,79,2625,19,1983,ford,ford_ranger,US_USA,28
+4,119,82,2720,19,1983,chevrolet_chevy,chevrolet_s-10,US_USA,31
