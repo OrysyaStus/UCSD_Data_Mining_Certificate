@@ -1,0 +1,2 @@
+# CSE40769_UCSD_WEKA_DataMiningII_Advanced_Methods_and_Applications
+Examine advanced data mining, data analysis and pattern recognition concepts and algorithms. Course content builds upon Data Mining I and includes input/output models, machine learning algorithms, advanced methods and applications. Coursework will include learning from massive datasets, including methods such as neural networks and support vector machines.
